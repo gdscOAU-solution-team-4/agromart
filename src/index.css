@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.hero-bg{
+    background: url("./assets/Image.png");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+ 
+  
+    
+}
  
 
 
