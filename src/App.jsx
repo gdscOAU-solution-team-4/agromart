@@ -1,13 +1,19 @@
 import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Offer from "./components/Offer";
+import About from "./components/About";
 
 export default function App() {
   return (
-    <>
-      <h1 className="text-3xl text-center text-red-900 font-bold underline">
-        Hello world!
-      </h1>
-      <Outlet />
-      <div>footer</div>
-    </>
+    <div>
+      <Header />
+      <Hero />
+      <Offer />
+      <About />
+      
+      
+      
+    </div>
   );
 }
