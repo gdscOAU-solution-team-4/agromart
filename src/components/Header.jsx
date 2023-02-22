@@ -34,7 +34,7 @@ export default function Header() {
                 </div>
                 <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-2xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
             </div>
-            <div className="border p-1 rounded-full flex gap-2 items-center">
+            <div className="border py-1 px-2 rounded-full flex gap-2 items-center">
                 <div className="w-8 h-8 rounded-full bg-slate-800 flex justify-center items-center">
                 <Icon icon="ic:round-shopping-cart" color="white" width="20" height="20" />
 
