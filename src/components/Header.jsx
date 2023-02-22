@@ -1,12 +1,13 @@
 import { Icon } from '@iconify/react';
+import logo from '../assets/logo.png'
 
 export default function Header() {
     return (
-      <div className="bg-gray-300 py-6">
+      <div className="bg-white py-6">
         <div className=" grid grid-cols-3  px-20">
            {/* Logo */}
-           <div className="flex">
-                <div><img src="" alt="logo" /></div>
+           <div className="flex gap-2">
+                <div><img className='w-4 mt-2' src={logo} alt="logo" /></div>
                 <div>
                     <span className="text-2xl font-bold text-green-700">Agromart</span>
                 </div>
@@ -33,7 +34,7 @@ export default function Header() {
                 </div>
                 <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-2xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
             </div>
-            <div className="border-2 p-1 rounded-full flex gap-2 items-center">
+            <div className="border p-1 rounded-full flex gap-2 items-center">
                 <div className="w-8 h-8 rounded-full bg-slate-800 flex justify-center items-center">
                 <Icon icon="ic:round-shopping-cart" color="white" width="20" height="20" />
 
