@@ -11,6 +11,9 @@ module.exports = {
         dmSan: 'dmSan',
         heldane: 'heldane',
       },
+      colors: {
+        'white-100': '#F9F8F8',
+      },
     },
   },
   plugins: [],

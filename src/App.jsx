@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
+import BuyerDash from './pages/BuyerDash'
 
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-// testing rule
 
 export default function App() {
   return (
@@ -12,6 +12,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
+        <Route path='/shop' element={<BuyerDash />} />
       </Routes>
     </>
   )
