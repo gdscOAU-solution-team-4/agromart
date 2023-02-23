@@ -12,6 +12,8 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         openSan: ['Roboto', 'sans-serif'],
         yellowtail: ['Yellowtail', 'cursive'],
+        'dmSan': "dmSan",
+        'heldane': "heldane"
 
       },
 

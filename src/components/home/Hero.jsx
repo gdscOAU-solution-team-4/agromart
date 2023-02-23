@@ -1,4 +1,7 @@
 import { mainImg } from "../../assets";
+import { Link } from 'react-router-dom';
+
+
 export default function Hero() {
     return (
       <div className="w-full mb-5 flex items-center pt-8 bg-[#F1EFF0] ">
@@ -9,7 +12,9 @@ export default function Hero() {
               of life
           </h2>
           <div className="pt-5">
-            <button className='bg-[#0E563F] w-40 py-3 rounded-xl text-white font-semibold'>Get Started</button>
+              <Link to='/register'>
+                <button className='bg-[#0E563F] w-32 py-3 rounded-xl text-white font-semibold'>Get Started</button>
+              </Link>
           </div>
         </div>
         <div className="w-1/2 flex justify-end items-end">
