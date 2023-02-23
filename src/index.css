@@ -5,4 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
- 
+@font-face {
+    font-family: heldane;
+    src: url(/src/assets/font/TestHeldaneText-Regular.otf);
+}
+
+@font-face {
+    font-family: dmSan;
+    src: url(/src/assets/font/DMSans-Regular.ttf);
+}
