@@ -6,15 +6,15 @@ const AuthLayout = ({heading,subHeading,children, authImg, handleLink, buttonCon
   return (
     <Fragment>
       <Navbar />
-      <div className='flex flex-row'>
-        <div className="bg-textColor hidden md:block  w-1/2 h-full sticky top-0">
-          <img src={authImg} alt="" className='w-full h-auto'/>
+      
+      <div className=' w-full flex sticky top-0 right-0 '>
+        <div className="w-1/2 ">
+          <img src={authImg} alt="auth img" className='w-full '/>
        </div>
 
-      <div className=" md:w-1/2 flex flex-col justify-center  bg-[#F9F8F8]">
-
+      <div className=" md:w-1/2 flex flex-col  bg-[#F9F8F8]">
+      <div className="pt-24">
       <div className="">
-      <div className="py-1">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>
           <p className='text-xl my-5 font-dmSan text-[#141414] font-400 text-center'>{subHeading || 'Create a new account '}</p>
       </div>
