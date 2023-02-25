@@ -16,8 +16,9 @@ import {auth,
   collection, 
   addDoc, 
   doc,
-  getDoc
+  setDoc
   } from "../firebase/firebase.config"
+  
 
 
 
@@ -31,7 +32,6 @@ export default function SignUp() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
-  let navigate = useNavigate();
 
   const validatePassword = () => {
     let isValid = true
@@ -50,21 +50,27 @@ export default function SignUp() {
         if(validatePassword()) {
           // Create a new user with email and password using firebase
             createUserWithEmailAndPassword(auth, email, password)
-            .then(async() => {
-                alert("success")
-                const docRef = await addDoc(collection(db, "Users"), {
+            .then(async(userCredential) => {
+              alert("ses")
+              const uid = userCredential.user.uid;
 
-                    email: email,
-                    surname: surName,
-                    lastname: lastName,
-                    username: username,
-                    phonenumber: Number(phoneNumber),
-                    
-                  });
+              const userDocRef = doc(db, 'users', uid);
+
+              const userData = {
+                email: email,
+                surname: surName,
+                lastname: lastName,
+                username: username,
+                phonenumber: Number(phoneNumber)
+              };
+
+              StorageSave(uid);
+              return setDoc(userDocRef, userData);
                 
-                StorageSave(docRef.id);
-                window.location.assign('/onboard')
-              })
+            })
+            .then(() => { 
+              window.location.assign('/onboard')
+            })
             .catch((err) => {
                 if (err.message == "Firebase: Password should be at least 6 characters (auth/weak-password).") {
                     console.log("your password is too short please retry")

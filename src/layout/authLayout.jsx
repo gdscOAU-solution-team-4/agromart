@@ -19,12 +19,12 @@ const AuthLayout = ({
     <Fragment>
       <Navbar />
       
-      <div className=' w-full flex sticky top-0 right-0 '>
+      <div className=' w-full flex sticky top-0 right-0  bg-[#F9F8F8]'>
         <div className="lg:w-1/2 lg:block hidden ">
           <img src={authImg} alt="auth img" className='w-full  '/>
        </div>
 
-      <div className="w-full h-screen lg:h-auto lg:w-1/2 flex flex-col  bg-[#F9F8F8]">
+      <div className="w-full h-screen lg:h-auto lg:w-1/2 flex flex-col">
       <div className="pt-24">
       <div className="">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>

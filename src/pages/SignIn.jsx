@@ -1,14 +1,50 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { loginImg } from '../assets'
 import Input from '../components/atoms/Input'
 import AuthLayout from '../layout/authLayout'
 
+
+import { auth, signInWithEmailAndPassword } from "../firebase/firebase.config"
+import { save as StorageSave } from '../utils/storage';
+
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(true)
+
+
+    const validateForm = () => {
+    let isValid = true
+    if ( email == '' || password == '' ) {
+      isValid = false
+      alert('invalid credential')
+    }
+
+        return isValid
+    }
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (validateForm()) {
+            signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            )
+            .then(async(userCredential) => {
+                alert('success')
+                const user = userCredential.user;
+                StorageSave(user.uid);
+                window.location.assign('/onboard')
+            })
+            .catch((err) => {
+                toast.error(err)
+            })
+        }
+    }
 
   return (
     <>
@@ -16,6 +52,7 @@ export default function SignIn() {
         buttonContent={'Sign In'}
         subHeading={'Pick up where you left'}
         authImg={loginImg}
+        handleSubmit={handleSubmit}
         quesion={'Don’t have an account?'}
         questionLinkText={' Create One'}
         questionLink={'/register'}

@@ -7,6 +7,7 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         openSan: ['Roboto', 'sans-serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
         yellowtail: ['Yellowtail', 'cursive'],
         dmSan: 'dmSan',
         heldane: 'heldane',
