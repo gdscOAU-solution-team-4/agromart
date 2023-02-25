@@ -140,13 +140,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div>
-            <Link to='/register'>
-              <button className='bg-[#0E563F] w-32 py-3 rounded-xl text-white font-semibold'>
-                Get Started
-              </button>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
