@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
-  // this is really nice but can you follow the camel casing convention please ?
+
   let links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -13,7 +13,6 @@ export default function Navbar() {
   ]
 
   const [click, setClick] = useState(false)
-  // const [activeLink, setActiveLink] = useState('')
 
   const handleLinkClick = link => {
     setActiveLink(link)
