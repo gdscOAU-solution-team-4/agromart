@@ -12,7 +12,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         openSan: ['Open Sans', 'sans-serif'],
         ubuntu: ['Ubuntu', 'sans-serif'],
-        workSans: ['Work Sans', 'sans-serif'],
+        workSans: ['Work Sans', 'sans-serif'
         yellowtail: ['Yellowtail', 'cursive'],
         dmSan: 'dmSan',
         heldane: 'heldane',

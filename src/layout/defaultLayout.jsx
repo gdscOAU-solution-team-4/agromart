@@ -7,7 +7,7 @@ export default function DefaultLayout({ children }) {
     <>
       <Navbar />
 
-      <div className=''>{children}</div>
+      <div className='bg-[F9F8F8]'>{children}</div>
     </>
   )
 }
