@@ -10,7 +10,7 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
-        openSan: ['Roboto', 'sans-serif'],
+        openSan: ['Open Sans', 'sans-serif'],
         ubuntu: ['Ubuntu', 'sans-serif'],
         workSans: ['Work Sans', 'sans-serif'],
         yellowtail: ['Yellowtail', 'cursive'],
