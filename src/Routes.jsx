@@ -7,6 +7,7 @@ import {
 import App from './App'
 import BuyerDash from './pages/BuyerDash'
 import ErrorPage from './pages/ErrorPage'
+import FarmerOnBoard from './pages/FarmerOnBoard'
 import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
         <Route path='/login' element={<SignIn />} />
         <Route path='/shop' element={<BuyerDash />} />
         <Route path='/forgotten-password' element={<ForgotPassword />} />
+        <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
       </Route>
     </Route>
   )
