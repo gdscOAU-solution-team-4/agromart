@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import SectionFragment from '../UI/SectionFragment'
 
 export default function Navbar() {
-  // this is really nice but can you follow the camel casing convention please ?
+
   let links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -14,7 +14,6 @@ export default function Navbar() {
   ]
 
   const [click, setClick] = useState(false)
-  // const [activeLink, setActiveLink] = useState('')
 
   // can be handled with react router
   // const handleLinkClick = link => {
@@ -153,6 +152,24 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
+
+        </ul>
+        <div className='hidden md:flex justify-center gap-3 items-center'>
+          <div className='cursor-pointer border py-1 px-2 rounded-full flex gap-2 items-center'>
+            <div className='w-8 h-8 rounded-full bg-slate-800 flex justify-center items-center'>
+              <Icon
+                icon='ic:round-shopping-cart'
+                color='white'
+                width='20'
+                height='20'
+              />
+            </div>
+            <div className=''>
+              <span className='text-md font-semibold'>Cart(0)</span>
+            </div>
+          </div>
+
+
         </div>
       </SectionFragment>
     </div>

@@ -6,6 +6,8 @@ import offerImg1 from './img/offer-img1.png'
 import offerImg2 from './img/offer-img2.png'
 import registerImg from './img/register.png'
 import updatePassword from './img/update-password.png'
+import buyerIcon from './icon/buyer.png'
+import farmerIcon from './icon/farmer.png'
 
 export {
   mainImg,
@@ -16,4 +18,6 @@ export {
   loginImg,
   forgotPassword,
   updatePassword,
+  buyerIcon,
+  farmerIcon
 }
