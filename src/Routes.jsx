@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 
 import App from './App'
+import Onboard from './components/redirect/redirect'
 import BuyerDash from './pages/BuyerDash'
 import ErrorPage from './pages/ErrorPage'
 import FarmerOnBoard from './pages/FarmerOnBoard'
@@ -21,9 +22,10 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
-        <Route path='/shop' element={<BuyerDash />} />
+        <Route path='/buyer-dashboard' element={<BuyerDash />} />
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
+        <Route path='/onboard' element={<Onboard />} />
       </Route>
     </Route>
   )
