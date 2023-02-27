@@ -1,13 +1,15 @@
 import { Icon } from '@iconify/react'
-import Card from '../UI/Card'
+import useUserData from '../../hooks/useUserData';
+import Card from '../interface/Card'
 import Categories from './Categories'
 
 export default function Header() {
+  let userSurname = useUserData()?.surname;
   return (
     <>
       <div className='mb-12'>
         <h1 className='flex items-center gap-1 font-ubuntu text-3xl font-bold text-black md:text-6xl'>
-          Welcome Oluwajuwon
+          Welcome {userSurname}
           <span>
             <Icon icon='noto:waving-hand-medium-dark-skin-tone' />
           </span>
@@ -41,9 +43,8 @@ export default function Header() {
         </Card>
       </div>
 
-      <div className='my-7 flex items-center justify-between font-workSans text-2xl font-semibold md:text-4xl'>
+      <div className='my-9 flex items-center justify-between font-workSans text-2xl font-semibold '>
         <h2 className='text-blue-100'>Explore Categories</h2>
-        <span className='text-orange'>View More</span>
       </div>
 
       <Categories />

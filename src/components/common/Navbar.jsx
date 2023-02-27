@@ -1,9 +1,11 @@
 import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   // this is really nice but can you follow the camel casing convention please ?
+  //never (smiles)
+
   let links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -13,11 +15,6 @@ export default function Navbar() {
   ]
 
   const [click, setClick] = useState(false)
-  // const [activeLink, setActiveLink] = useState('')
-
-  const handleLinkClick = link => {
-    setActiveLink(link)
-  }
 
   return (
     <div className=' sticky top-0 left-0 z-[999] w-full bg-white px-1 shadow-md md:px-0 lg:px-5'>
@@ -81,24 +78,7 @@ export default function Navbar() {
                     : 'text-slate-900 duration-300  hover:text-slate-800'
                 }
               >
-                {/*  className={` ${
-                  activeLink === link.name
-                    ? 'text-slate-800'
-                    : 'text-slate-900 '
-                }`} */}
                 {link.name}
-                {/* we can utilize React Router DOM here
-              <a
-                href={link.link}
-                className={`hover:text-slate-800 text-slate-800 font-poppins font-medium text-base duration-300 ${
-                  activeLink === link.name
-                    ? 'text-slate-800'
-                    : 'text-slate-900 '
-                }`}
-                onClick={() => handleLinkClick(link.name)}
-              >
-                {link.name}
-              </a> */}
               </NavLink>
             </li>
           ))}
@@ -116,14 +96,6 @@ export default function Navbar() {
                 <span className='text-md font-semibold'>Cart(1)</span>
               </div>
             </div>
-
-            <div>
-              <Link to='/register'>
-                <button className='w-32 rounded-xl bg-[#0E563F] py-3 font-semibold text-white'>
-                  Get Started
-                </button>
-              </Link>
-            </div>
           </div>
         </ul>
         <div className='hidden items-center justify-center gap-3 md:flex'>
@@ -139,14 +111,6 @@ export default function Navbar() {
             <div className=''>
               <span className='text-md font-semibold'>Cart(0)</span>
             </div>
-          </div>
-
-          <div>
-            <Link to='/register'>
-              <button className='w-32 rounded-xl bg-[#0E563F] py-3 font-semibold text-white'>
-                Get Started
-              </button>
-            </Link>
           </div>
         </div>
       </div>

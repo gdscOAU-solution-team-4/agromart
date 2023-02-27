@@ -5,31 +5,13 @@ import { db, doc, getDoc, signOut, auth } from "../firebase/firebase.config"
 import { Link } from 'react-router-dom'
 import { buyerIcon, farmerIcon } from '../assets';
 import { useNavigate } from 'react-router-dom';
+import useUserData from '../hooks/useUserData';
 
 export default function UserOnboard() {
 
-    const[user, setUser] = useState('')
     let navigate = useNavigate();
 
-    useEffect(() => {
-
-        const fetchItems = async () => {
-
-            const useId = get();
-
-            const docRef = doc(db, "users", useId);
-            const docSnap = await getDoc(docRef);
-            
-            if (docSnap.exists()) {
-              setUser(docSnap.data());
-            } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-            }
-        }
-
-        fetchItems();
-    }, []);
+    let userSurname = useUserData()?.surname
 
     const handleLogout =() =>{
         signOut(auth).then(() => {
@@ -49,7 +31,7 @@ export default function UserOnboard() {
 
           <div>
             <div className='text-black font-ubuntu capitalize font-bold text-3xl'>
-              welcome {user.surname} 👋🏾
+              welcome {userSurname} 👋🏾
             </div>
             <div className='font-dmSan py-3 text-[#525C60] font-500 text-md'>Let’s get you started,</div>
             
@@ -80,7 +62,7 @@ export default function UserOnboard() {
           </div>
 
           <div className='w-full flex justify-start items-center'>
-            <Link to="/farmer-form">
+            <Link to="/onboard/supplier">
               <div className="py-8 px-10 w-full md:h-[8rem] mx-auto bg-[#EBF0F4] rounded-xl shadow filter drop-shadow-lg space-y-6 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
                 <img className="block mx-auto h-20 rounded-full sm:mx-0 sm:shrink-0" src={farmerIcon} alt="Woman's Face"/>
                 <div className="text-center space-y-2 sm:text-left">
@@ -98,9 +80,7 @@ export default function UserOnboard() {
             </Link>
           </div>
         </div>
-      </div>
-      
-        
+      </div>   
     </DefaultLayout>
   )
 }
