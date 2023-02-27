@@ -20,9 +20,9 @@ export default function Navbar() {
   }
 
   return (
-    <div className=' w-full z-[999] sticky bg-white shadow-md top-0 left-0 px-1 lg:px-5 md:px-0'>
-      <div className='md:flex items-center justify-between md:w-full py-8 md:px-4 lg:px-20 gap-3 px-7'>
-        <div className='font-roboto font-bold text-xl text-[#0E563F]'>
+    <div className=' sticky top-0 left-0 z-[999] w-full bg-white px-1 shadow-md md:px-0 lg:px-5'>
+      <div className='items-center justify-between gap-3 py-8 px-7 md:flex md:w-full md:px-4 lg:px-20'>
+        <div className='font-roboto text-xl font-bold text-[#0E563F]'>
           Agromart
         </div>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-6 h-6'
+              className='h-6 w-6'
             >
               <path
                 strokeLinecap='round'
@@ -52,7 +52,7 @@ export default function Navbar() {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-6 h-6'
+              className='h-6 w-6'
             >
               <path
                 strokeLinecap='round'
@@ -64,21 +64,21 @@ export default function Navbar() {
         </div>
 
         <ul
-          className={`md:flex bg-white md:items-center pl-5 md:pl-0 md:z-auto md:w-auto md:pb-0 md:static pb-12 absolute  z-[-1] left-0 w-full transition-all duration-300 ease-in ${
+          className={`absolute left-0 z-[-1] w-full bg-white pl-5 pb-12 transition-all duration-300 ease-in md:static  md:z-auto md:flex md:w-auto md:items-center md:pl-0 md:pb-0 ${
             click ? 'top-[4rem]' : 'top-[-430px]'
           }`}
         >
           {links.map(link => (
             <li
               key={link.name}
-              className='md:ml-8 text-md md:my-0 my-7 font-poppins font-medium text-base'
+              className='text-md my-7 font-poppins text-base font-medium md:my-0 md:ml-8'
             >
               <NavLink
                 to={link.link}
                 className={({ isActive }) =>
                   isActive
-                    ? 'hover:text-slate-800 text-slate-800  duration-300'
-                    : 'hover:text-slate-800 text-slate-900  duration-300'
+                    ? 'text-slate-800 duration-300  hover:text-slate-800'
+                    : 'text-slate-900 duration-300  hover:text-slate-800'
                 }
               >
                 {/*  className={` ${
@@ -102,9 +102,9 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
-          <div className='md:hidden flex justify-start gap-3 items-center'>
-            <div className='cursor-pointer border py-1 px-2 rounded-full flex gap-2 items-center'>
-              <div className='w-8 h-8 rounded-full bg-slate-800 flex justify-center items-center'>
+          <div className='flex items-center justify-start gap-3 md:hidden'>
+            <div className='flex cursor-pointer items-center gap-2 rounded-full border py-1 px-2'>
+              <div className='flex h-8 w-8 items-center justify-center rounded-full bg-slate-800'>
                 <Icon
                   icon='ic:round-shopping-cart'
                   color='white'
@@ -119,16 +119,16 @@ export default function Navbar() {
 
             <div>
               <Link to='/register'>
-                <button className='bg-[#0E563F] w-32 py-3 rounded-xl text-white font-semibold'>
+                <button className='w-32 rounded-xl bg-[#0E563F] py-3 font-semibold text-white'>
                   Get Started
                 </button>
               </Link>
             </div>
           </div>
         </ul>
-        <div className='hidden md:flex justify-center gap-3 items-center'>
-          <div className='cursor-pointer border py-1 px-2 rounded-full flex gap-2 items-center'>
-            <div className='w-8 h-8 rounded-full bg-slate-800 flex justify-center items-center'>
+        <div className='hidden items-center justify-center gap-3 md:flex'>
+          <div className='flex cursor-pointer items-center gap-2 rounded-full border py-1 px-2'>
+            <div className='flex h-8 w-8 items-center justify-center rounded-full bg-slate-800'>
               <Icon
                 icon='ic:round-shopping-cart'
                 color='white'
@@ -143,7 +143,7 @@ export default function Navbar() {
 
           <div>
             <Link to='/register'>
-              <button className='bg-[#0E563F] w-32 py-3 rounded-xl text-white font-semibold'>
+              <button className='w-32 rounded-xl bg-[#0E563F] py-3 font-semibold text-white'>
                 Get Started
               </button>
             </Link>

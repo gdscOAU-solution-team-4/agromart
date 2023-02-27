@@ -1,28 +1,102 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import { registerImg } from '../assets'
 import Input from '../components/atoms/Input'
 import AuthLayout from '../layout/authLayout'
 
+import { save as StorageSave } from '../utils/storage';
+
+//firebase
+import {auth, 
+  db, 
+  provider, 
+  createUserWithEmailAndPassword, 
+  signInWithPopup, 
+  collection, 
+  addDoc, 
+  doc,
+  setDoc
+  } from "../firebase/firebase.config"
+  
+
+
+
 export default function SignUp() {
+
   const [email, setEmail] = useState('')
-  const [fullName, setFullName] = useState('')
-  // review phone number initial state, the current state hides the placeholder, consider using null
-  const [phoneNumber, setPhoneNumber] = useState(0)
+  const [surName, setSurName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState(undefined)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
+
+  const validatePassword = () => {
+    let isValid = true
+      if (password !== '' && confirmPassword !== '' ){
+        if (password !== confirmPassword) {
+            isValid = false
+            alert("password does not match")
+          }
+      }
+
+    return isValid
+  }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(validatePassword()) {
+          // Create a new user with email and password using firebase
+            createUserWithEmailAndPassword(auth, email, password)
+            .then(async(userCredential) => {
+              alert("ses")
+              const uid = userCredential.user.uid;
+
+              const userDocRef = doc(db, 'users', uid);
+
+              const userData = {
+                email: email,
+                surname: surName,
+                lastname: lastName,
+                username: username,
+                phonenumber: Number(phoneNumber)
+              };
+
+              StorageSave(uid);
+              return setDoc(userDocRef, userData);
+                
+            })
+            .then(() => { 
+              window.location.assign('/onboard')
+            })
+            .catch((err) => {
+                if (err.message == "Firebase: Password should be at least 6 characters (auth/weak-password).") {
+                    console.log("your password is too short please retry")
+                } 
+                else if(err.message == "Firebase: Error (auth/email-already-in-use)."){
+                    console.log("This email is been used by someone else")
+                }
+                else if(err.message == "Firebase: Error (auth/network-request-failed)."){
+                    console.log("please turn on the internet connection")
+                }
+                else {
+                    console.log(err.message)
+                }
+            })
+        }
+      }
   return (
     <>
       <AuthLayout
         authImg={registerImg}
-        handleLink={'/'}
         quesion={'Already have an account?'}
         questionLinkText={'Sign In'}
         questionLink={'/login'}
+        handleSubmit={handleSubmit}
       >
-        <form className='px-14 pt-6'>
+        <form className='px-14 pt-6' onSubmit={handleSubmit}>
           <Input
             type={'email'}
             placeholder={'email address'}
@@ -33,14 +107,23 @@ export default function SignUp() {
 
           <Input
             type={'text'}
-            placeholder={'Full Name'}
-            label={'fullName'}
-            defaultValue={fullName}
-            onChange={e => setFullName(e.target.value)}
+            placeholder={'Surname'}
+            label={'surname'}
+            defaultValue={surName}
+            onChange={e => setSurName(e.target.value)}
           />
+
+          <Input
+            type={'text'}
+            placeholder={'Last Name'}
+            label={'lastName'}
+            defaultValue={lastName}
+            onChange={e => setLastName(e.target.value)}
+          />
+
           <Input
             // consider input type='tel'
-            type={'number'}
+            type={'tel'}
             placeholder={'Phone Number'}
             label={'phone'}
             defaultValue={phoneNumber}
