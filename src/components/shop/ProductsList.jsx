@@ -72,7 +72,7 @@ const products = [
 export default function ProductsList() {
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-5 my-20'>
+      <div className='my-20 grid grid-cols-1 gap-5 md:grid-cols-3'>
         {products.map(
           ({ category, name, price, dealPrice, ratingStar, imgUrl }) => (
             <ProductItem
@@ -86,7 +86,7 @@ export default function ProductsList() {
           )
         )}
       </div>
-      <Button className='bg-green-100 text-white mx-auto block pr-32 pl-32 pt-3 pb-3 font-medium font-dmSan md:text-base text-sm'>
+      <Button className='mx-auto block bg-green-100 pr-32 pl-32 pt-3 pb-3 font-dmSan text-sm font-medium text-white md:text-base'>
         Next Page
       </Button>
     </>

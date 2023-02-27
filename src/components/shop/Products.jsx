@@ -6,7 +6,6 @@ export default function Products() {
     <div>
       <ProductsBanner />
       <ProductsList />
-      
     </div>
   )
 }

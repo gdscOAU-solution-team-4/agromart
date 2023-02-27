@@ -9,20 +9,20 @@ export default function ProductItem({
   imgUrl,
 }) {
   return (
-    <Card className='bg-white drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] rounded-2xl cursor-pointer hover:translate-y-2 ease-in transition-transform'>
-      <h5 className='p-2 bg-[#274c5b] rounded-lg text-center text-white font-openSan max-w-max md:text-base text-sm font-semibold'>
+    <Card className='cursor-pointer rounded-2xl bg-white drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] transition-transform ease-in hover:translate-y-2'>
+      <h5 className='max-w-max rounded-lg bg-[#274c5b] p-2 text-center font-openSan text-sm font-semibold text-white md:text-base'>
         {category}
       </h5>
       <div>
         <img src={imgUrl} alt={name} />
       </div>
       <div>
-        <p className='font-roboto font-semibold text-[#274c5b] md:text-xl text-base'>
+        <p className='font-roboto text-base font-semibold text-[#274c5b] md:text-xl'>
           {name}
         </p>
         <hr />
         <div className='flex justify-between'>
-          <div className='font-openSan font-semibold flex gap-2'>
+          <div className='flex gap-2 font-openSan font-semibold'>
             <p className='text-[#B8B8B8] line-through'>${price}</p>
             <p className='text-[#274c5b]'>${deal}</p>
           </div>

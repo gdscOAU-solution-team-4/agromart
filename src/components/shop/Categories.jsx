@@ -17,7 +17,7 @@ const categories = [
 
 export default function Categories() {
   return (
-    <div className='gap-5 grid md:grid-cols-3 grid-cols-1'>
+    <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
       {categories.map(({ imageUrl, categoryName }, i) => (
         <CategoryCard key={i} imageUrl={imageUrl} categoryName={categoryName} />
       ))}

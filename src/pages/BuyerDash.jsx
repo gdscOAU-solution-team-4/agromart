@@ -6,7 +6,7 @@ import DefaultLayout from '../layout/defaultLayout'
 export default function BuyerDash() {
   return (
     <DefaultLayout>
-      <div className='bg-white-100 py-9 min-h-screen'>
+      <div className='min-h-screen bg-white-100 py-9'>
         <SectionFragment className='my-7'>
           <Header />
           <Products />
