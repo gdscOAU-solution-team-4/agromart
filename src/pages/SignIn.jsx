@@ -8,11 +8,14 @@ import AuthLayout from '../layout/authLayout'
 
 import { auth, signInWithEmailAndPassword } from "../firebase/firebase.config"
 import { save as StorageSave } from '../utils/storage';
+import Toast from '../components/toast/toast'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
+  const [showToast, setShowToast] = useState(false);
 
 
     const validateForm = () => {
@@ -28,6 +31,7 @@ export default function SignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
         if (validateForm()) {
             signInWithEmailAndPassword(
                 auth,
@@ -35,7 +39,7 @@ export default function SignIn() {
                 password
             )
             .then(async(userCredential) => {
-                alert('success')
+                setShowToast(true);
                 const user = userCredential.user;
                 StorageSave(user.uid);
                 window.location.assign('/onboard')
@@ -45,11 +49,14 @@ export default function SignIn() {
             })
         }
     }
-
+    const handleCloseToast = () => {
+      setShowToast(false);
+    };
   return (
     <>
       <AuthLayout
-        buttonContent={'Sign In'}
+        buttonContent={isLoading ? 'please wait...' : 'Sign In'}
+        disabled={isLoading}
         subHeading={'Pick up where you left'}
         authImg={loginImg}
         handleSubmit={handleSubmit}
@@ -89,6 +96,9 @@ export default function SignIn() {
             </div>
           </div>
         </form>
+      {showToast && (
+        <Toast message="This is a toast message" onClose={handleCloseToast} />
+      )}
       </AuthLayout>
     </>
   )

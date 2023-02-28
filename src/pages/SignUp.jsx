@@ -10,11 +10,7 @@ import { save as StorageSave } from '../utils/storage';
 //firebase
 import {auth, 
   db, 
-  provider, 
   createUserWithEmailAndPassword, 
-  signInWithPopup, 
-  collection, 
-  addDoc, 
   doc,
   setDoc
   } from "../firebase/firebase.config"
@@ -31,7 +27,7 @@ export default function SignUp() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-
+  const [isLoading, setIsLoading] = useState(false)
 
   const validatePassword = () => {
     let isValid = true
@@ -47,6 +43,7 @@ export default function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
         if(validatePassword()) {
           // Create a new user with email and password using firebase
             createUserWithEmailAndPassword(auth, email, password)
@@ -95,6 +92,8 @@ export default function SignUp() {
         questionLinkText={'Sign In'}
         questionLink={'/login'}
         handleSubmit={handleSubmit}
+        buttonContent={isLoading ? 'please wait...' : 'get started'}
+        disabled={isLoading}
       >
         <form className='px-14 pt-6' onSubmit={handleSubmit}>
           <Input

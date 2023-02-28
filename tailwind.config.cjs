@@ -24,6 +24,7 @@ module.exports = {
         'green-100': '#0E563F',
         'blue-100': '#09051C',
         orange: '#FF7C32',
+        primary: "#0E563F"
       },
     },
   },
