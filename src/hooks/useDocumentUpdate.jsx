@@ -1,24 +1,25 @@
 import { useState } from 'react';
 import { doc, updateDoc } from 'firebase/firestore';
+import Toast from '../components/toast/toast';
 
 const useDocumentUpdate = () => {
   const [error, setError] = useState(null);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [message, setMessage] = useState("" || null)
 
   const updateDocument = async (docRef, newData) => {
     setIsUpdating(true);
     try {
       await updateDoc(docRef, newData);
-      console.log('Document updated successfully');
+      setMessage('updated successfully');
     } catch (err) {
-      console.error(err);
-      setError(err);
+      setMessage(err);
     } finally {
       setIsUpdating(false);
     }
   };
 
-  return [updateDocument, isUpdating, error];
+  return [updateDocument, isUpdating, message];
 };
 
 export default useDocumentUpdate;

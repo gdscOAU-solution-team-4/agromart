@@ -6,7 +6,7 @@ const Toast = ({ message, onClose }) => {
 
   useEffect(() => {
     setShow(true);
-    const timer = setTimeout(() => setShow(false), 3000);
+    const timer = setTimeout(() => setShow(false), 9000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -16,8 +16,17 @@ const Toast = ({ message, onClose }) => {
   };
 
   return (
-    <Transition show={show} as={Fragment}>
-      <div className="fixed bottom-4 right-4 z-50">
+    <Transition 
+        show={show} 
+        as={Fragment}
+        enter="transition transform ease-out duration-200"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="transition transform ease-in duration-200"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+    >
+      <div className="fixed top-[7rem] right-4 z-[1000]">
         <div className="bg-white shadow-lg rounded-md p-4">
           <div className="flex items-center justify-between">
             <p className="font-medium text-gray-900">{message}</p>

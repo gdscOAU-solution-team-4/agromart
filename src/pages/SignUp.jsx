@@ -13,8 +13,9 @@ import {auth,
   createUserWithEmailAndPassword, 
   doc,
   setDoc
-  } from "../firebase/firebase.config"
+} from "../firebase/firebase.config"
   
+import Toast from '../components/toast/toast';
 
 
 
@@ -28,13 +29,37 @@ export default function SignUp() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showToast, setShowToast] = useState(false);
+  const [message, setMessage] = useState("" || null)
+
+  const validateForm = () => {
+    let isValid = true
+    if ( 
+        email == '' || 
+        password == '' || 
+        surName == "" || 
+        lastName == "" || 
+        phoneNumber == "" ||
+        confirmPassword == ""
+      ) {
+
+      isValid = false
+      setMessage('invalid credential')
+      setIsLoading(false)
+
+    }
+
+    return isValid
+
+  }
 
   const validatePassword = () => {
     let isValid = true
       if (password !== '' && confirmPassword !== '' ){
         if (password !== confirmPassword) {
             isValid = false
-            alert("password does not match")
+            setMessage("password does not match")
+            setIsLoading(false)
           }
       }
 
@@ -44,11 +69,12 @@ export default function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        if(validatePassword()) {
-          // Create a new user with email and password using firebase
+        setShowToast(true);
+        if(validateForm() && validatePassword()) {
+
             createUserWithEmailAndPassword(auth, email, password)
             .then(async(userCredential) => {
-              alert("ses")
+              setMessage("success")
               const uid = userCredential.user.uid;
 
               const userDocRef = doc(db, 'users', uid);
@@ -69,21 +95,28 @@ export default function SignUp() {
               window.location.assign('/onboard')
             })
             .catch((err) => {
-                if (err.message == "Firebase: Password should be at least 6 characters (auth/weak-password).") {
-                    console.log("your password is too short please retry")
+                if (err?.message == "Firebase: Password should be at least 6 characters (auth/weak-password).") {
+                    setMessage("your password is too short please retry")
+                    setIsLoading(false)
                 } 
-                else if(err.message == "Firebase: Error (auth/email-already-in-use)."){
-                    console.log("This email is been used by someone else")
+                else if(err?.message == "Firebase: Error (auth/email-already-in-use)."){
+                    setMessage("This email is been used by someone else")
+                    setIsLoading(false)
                 }
-                else if(err.message == "Firebase: Error (auth/network-request-failed)."){
-                    console.log("please turn on the internet connection")
+                else if(err?.message == "Firebase: Error (auth/network-request-failed)."){
+                    setMessage("please turn on the internet connection")
+                    setIsLoading(false)
                 }
                 else {
-                    console.log(err.message)
+                    setMessage(err?.message)
+                    setIsLoading(false)
                 }
             })
         }
       }
+    const handleCloseToast = () => {
+      setShowToast(false);
+    };
   return (
     <>
       <AuthLayout
@@ -121,7 +154,6 @@ export default function SignUp() {
           />
 
           <Input
-            // consider input type='tel'
             type={'tel'}
             placeholder={'Phone Number'}
             label={'phone'}
@@ -150,6 +182,9 @@ export default function SignUp() {
             onChange={e => setConfirmPassword(e.target.value)}
           />
         </form>
+        {showToast && (
+          <Toast message={message} onClose={handleCloseToast} />
+        )}
       </AuthLayout>
     </>
   )

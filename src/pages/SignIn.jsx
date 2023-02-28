@@ -16,14 +16,15 @@ export default function SignIn() {
   const [remember, setRemember] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
   const [showToast, setShowToast] = useState(false);
-
+  const [message, setMessage] = useState("" || null)
 
     const validateForm = () => {
-    let isValid = true
-    if ( email == '' || password == '' ) {
-      isValid = false
-      alert('invalid credential')
-    }
+      let isValid = true
+      if ( email == '' || password == '' ) {
+        isValid = false
+        setMessage('invalid credential')
+        setIsLoading(false)
+      }
 
         return isValid
     }
@@ -32,6 +33,7 @@ export default function SignIn() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsLoading(true)
+        setShowToast(true);
         if (validateForm()) {
             signInWithEmailAndPassword(
                 auth,
@@ -39,13 +41,21 @@ export default function SignIn() {
                 password
             )
             .then(async(userCredential) => {
-                setShowToast(true);
+                setMessage("success")
                 const user = userCredential.user;
                 StorageSave(user.uid);
                 window.location.assign('/onboard')
             })
             .catch((err) => {
-                toast.error(err)
+               
+                if (err?.message == "Firebase: Error (auth/wrong-password).") {
+                  setMessage("wrong password/email")
+                  setIsLoading(false)
+                }
+                else{
+                  setMessage(err?.message)
+                  setIsLoading(false)
+                }
             })
         }
     }
@@ -97,7 +107,7 @@ export default function SignIn() {
           </div>
         </form>
       {showToast && (
-        <Toast message="This is a toast message" onClose={handleCloseToast} />
+        <Toast message={message} onClose={handleCloseToast} />
       )}
       </AuthLayout>
     </>

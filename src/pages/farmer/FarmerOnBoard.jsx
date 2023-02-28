@@ -13,12 +13,17 @@ import {
 import { get } from '../../utils/storage';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
+import Toast from '../../components/toast/toast'
 
 
 export default function FarmerOnBoard({ docRef, newData }) {
   const[farmName, setFarmName] = useState("");
   const[farmAddress, setFarmAddress] = useState("");
   let [isOpen, setIsOpen] = useState(false)
+  const [showToast, setShowToast] = useState(false);
+    
+  let userSurname = useUserData()?.surname
+  const [updateDocument, isUpdating, message] = useDocumentUpdate();
 
   function handleProductClick() {
     setIsOpen(false)
@@ -30,24 +35,37 @@ export default function FarmerOnBoard({ docRef, newData }) {
     window.location.assign('/farmer-dashboard')
   }
 
-  let userSurname = useUserData()?.surname
+    const validateForm = () => {
+      let isValid = true
+      if ( farmName == '' || farmAddress == '' ) {
+        isValid = false
+        message('invalid credential')
+        setIsLoading(false)
+      }
 
-  const [updateDocument, isUpdating, error] = useDocumentUpdate();
+        return isValid
+    }
+
 
   const handleClick = () => {
+    setShowToast(true)
+    if (validateForm()) {
+      const useId = get();
+      const docRef = doc(db, "users", useId);
 
-    const useId = get();
-    const docRef = doc(db, "users", useId);
-
-    const newData = { 
-      isFarmer: true, 
-      farmname: farmName, 
-      farmaddress: farmAddress 
-    };
-    updateDocument(docRef, newData);
-    setIsOpen(true)
+      const newData = { 
+        isFarmer: true, 
+        farmname: farmName, 
+        farmaddress: farmAddress 
+      };
+      updateDocument(docRef, newData);
+      setIsOpen(true)
+    }
 
   }
+    const handleCloseToast = () => {
+      setShowToast(false);
+    };
   return (
     <AuthLayout
       authImg={loginImg}
@@ -61,7 +79,9 @@ export default function FarmerOnBoard({ docRef, newData }) {
       handleSubmit={handleClick}
       disabled={isUpdating}
     >
-      {error && <p>{error.message}</p>}
+      {showToast && (
+        <Toast message={message} onClose={handleCloseToast} />
+      )}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={farmerDashboard}>
           <Transition.Child
