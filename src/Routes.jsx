@@ -14,16 +14,12 @@ import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-
-
 // creates routes and returns router object for app
 const router = createBrowserRouter(
   createRoutesFromElements(
-    
     <Route path='/' element={<App />} errorElement={<ErrorPage />}>
       <Route errorElement={<ErrorPage />}>
         <Route index element={<Home />} />
-       
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
         <Route path='/buyer-dashboard' element={<BuyerDash />} />
@@ -32,8 +28,8 @@ const router = createBrowserRouter(
         <Route path='/onboard' element={<Onboard />} />
         <Route path='/about' element={<AboutUs />} />
       </Route>
+
     </Route>
   )
 )
-
 export default router
