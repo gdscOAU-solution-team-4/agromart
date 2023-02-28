@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Button from '../interface/Button'
+import Button from '../atoms/Button'
 import ProductItem from './ProductItem'
 
 const products = [

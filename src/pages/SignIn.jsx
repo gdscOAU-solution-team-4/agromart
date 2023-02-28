@@ -8,19 +8,23 @@ import AuthLayout from '../layout/authLayout'
 
 import { auth, signInWithEmailAndPassword } from "../firebase/firebase.config"
 import { save as StorageSave } from '../utils/storage';
+import Toast from '../components/toast/toast'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(true)
-
+  const [isLoading, setIsLoading] = useState(false)
+  const [showToast, setShowToast] = useState(false);
+  const [message, setMessage] = useState("" || null)
 
     const validateForm = () => {
-    let isValid = true
-    if ( email == '' || password == '' ) {
-      isValid = false
-      alert('invalid credential')
-    }
+      let isValid = true
+      if ( email == '' || password == '' ) {
+        isValid = false
+        setMessage('invalid credential')
+        setIsLoading(false)
+      }
 
         return isValid
     }
@@ -28,6 +32,8 @@ export default function SignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
+        setShowToast(true);
         if (validateForm()) {
             signInWithEmailAndPassword(
                 auth,
@@ -35,21 +41,32 @@ export default function SignIn() {
                 password
             )
             .then(async(userCredential) => {
-                alert('success')
+                setMessage("success")
                 const user = userCredential.user;
                 StorageSave(user.uid);
                 window.location.assign('/onboard')
             })
             .catch((err) => {
-                toast.error(err)
+               
+                if (err?.message == "Firebase: Error (auth/wrong-password).") {
+                  setMessage("wrong password/email")
+                  setIsLoading(false)
+                }
+                else{
+                  setMessage(err?.message)
+                  setIsLoading(false)
+                }
             })
         }
     }
-
+    const handleCloseToast = () => {
+      setShowToast(false);
+    };
   return (
     <>
       <AuthLayout
-        buttonContent={'Sign In'}
+        buttonContent={isLoading ? 'please wait...' : 'Sign In'}
+        disabled={isLoading}
         subHeading={'Pick up where you left'}
         authImg={loginImg}
         handleSubmit={handleSubmit}
@@ -89,6 +106,9 @@ export default function SignIn() {
             </div>
           </div>
         </form>
+      {showToast && (
+        <Toast message={message} onClose={handleCloseToast} />
+      )}
       </AuthLayout>
     </>
   )

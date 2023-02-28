@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <div className='mb-12'>
         <h1 className='flex items-center gap-1 font-ubuntu text-3xl font-bold text-black md:text-6xl'>
-          Welcome {userSurname}
+          Welcome {userSurname || "user"}
           <span>
             <Icon icon='noto:waving-hand-medium-dark-skin-tone' />
           </span>
