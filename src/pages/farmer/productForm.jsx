@@ -1,16 +1,6 @@
-import { Icon } from '@iconify/react'
-import { loginImg } from '../assets'
-import Input from '../components/atoms/Input'
-import AuthLayout from '../layout/authLayout'
-import useUserData from '../hooks/useUserData'
-import { useState } from 'react'
+import React from 'react'
 
-export default function FarmerOnBoard() {
-  const[farmName, setFarmName] = useState("");
-  const[farmAddress, setFarmAddress] = useState("");
-
-  let userSurname = useUserData()?.surname
-
+export default function ProductForm() {
   return (
     <AuthLayout
       authImg={loginImg}
@@ -21,8 +11,9 @@ export default function FarmerOnBoard() {
         </span>
       }
       subHeading={'Kindly fill the form below'}
+      handleSubmit={handleClick}
     >
-      <form action='' className='px-8 py-5'>
+       <form action='' className='px-8 py-5'>
         <Input
           type={'text'}
           placeholder={'Farm Name'}

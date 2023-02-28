@@ -14,6 +14,7 @@ const AuthLayout = ({
   questionLink,
   questionLinkText,
   handleSubmit,
+  disabled
 }) => {
   return (
     <Fragment>
@@ -37,7 +38,7 @@ const AuthLayout = ({
 
         <div >
               <Link to={handleLink} className="pt-10 flex justify-center items-center">
-                <button onClick={handleSubmit} className='bg-[#0E563F]   w-1/2 py-3 rounded-xl text-white font-semibold'>{ buttonContent || "Get Started" }</button>
+                <button onClick={handleSubmit} disabled={disabled} className='bg-[#0E563F]   w-1/2 py-3 rounded-xl text-white font-semibold capitalize'>{ buttonContent || "Get Started" }</button>
               </Link>
             </div>
             <div className='pt-8 text-sm font-dmSan font-500 text-[#141414] text-center '>
