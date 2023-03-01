@@ -1,9 +1,9 @@
-import icon from '../../assets/img/icon.png'
-import plant from '../../assets/img/plant.png'
-import icon2 from '../../assets/img/icon2.png'
-import icon3 from '../../assets/img/icon3.png'
-import icon4 from '../../assets/img/icon5.png'
-import icon5 from '../../assets/img/icon6.png'
+import { icon } from '../../assets'
+import { icon2 } from '../../assets'
+import { icon3 } from '../../assets'
+import { icon4 } from '../../assets'
+import { icon5 } from '../../assets'
+import { plant } from '../../assets'
 import { Link } from 'react-router-dom'
 export default function WhyChooseUs() {
     return(
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
         <div>
         <div className='my-5 bg-gray-300 flex gap-3 px-3 py-4 rounded-full w-1/2'>
            <div>
-             <img className='mt-1' src={icon} alt="" />
+             <img className='mt-1' src={icon} alt="bullet" />
            </div>
            <div>
              <span>100% Natural Product</span>
@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
         <div className='my-9'>
         <div className='my-5 bg-gray-300 flex gap-3 px-3 py-4 rounded-full w-1/2'>
            <div>
-             <img className='mt-1' src={icon} alt="" />
+             <img className='mt-1' src={icon} alt="bullet" />
            </div>
            <div>
              <span> Increases resistance</span>
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
         
        </div>
        <div>
-         <img  src={plant} alt="" />
+         <img  src={plant} alt="plant" />
        </div>
  
  
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
          <div className='grid grid-cols-4 gap-5 px-9'>
             <div className='bg-white px-3 py-16  rounded-2xl text-center'>
                 <div className='flex justify-center'>
-                <img src={icon2} alt="" />
+                <img src={icon2} alt="icon1" />
                 </div>
                 <div>
                     <h5 className='font-bold text-slate-700 text-xl'>Return Policy</h5>
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
 
             <div className='bg-white px-3 py-16  rounded-2xl text-center'>
                 <div className='flex justify-center'>
-                <img src={icon3} alt="" />
+                <img src={icon3} alt="icon2" />
                 </div>
                 <div>
                     <h5 className='font-bold text-slate-700 text-xl'>100% Fresh</h5>
@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
 
             <div className='bg-white px-3 py-16  rounded-2xl text-center'>
                 <div className='flex justify-center'>
-                <img src={icon4} alt="" />
+                <img src={icon4} alt="icon3" />
                 </div>
                 <div>
                     <h5 className='font-bold text-slate-700 text-xl'>Support 24/7</h5>
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
 
             <div className='bg-white px-3 py-16  rounded-2xl text-center'>
                 <div className='flex justify-center'>
-                <img src={icon5} alt="" />
+                <img src={icon5} alt="icon4" />
                 </div>
                 <div>
                     <h5 className='font-bold text-slate-700 text-xl'>Secured Payment

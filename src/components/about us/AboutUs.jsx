@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
-import fruit from '../../assets/img/fruit2.png'
-import tractor from '../../assets/img/Tractor.png'
-import chemical from '../../assets/img/Chemical.png'
+import { tractor } from '../../assets'
+import { fruit } from '../../assets'
+import { chemical } from '../../assets'
+
 
 export default function Aboutus() {
   return (
     <div className='bg-[#fff] md:grid grid-cols-2 px-4  py-20  w-full'>
       <div>
-        <img  src={fruit} alt="" />
+        <img  src={fruit} alt="plate of food" />
       </div>
       <div className='py-9'>
       <h5 className='font-yellowtail text-xl text-[#68A47F]'>
@@ -32,7 +33,7 @@ export default function Aboutus() {
         <div className='grid grid-cols-2'>
           <div className='flex gap-2'>
             <div>
-              <img src={tractor} alt="" />
+              <img src={tractor} alt="tractor icon" />
             </div>
             <div>
               <span className='text-sm  font-semibold'>Modern Agriculture <br /> Equipment
@@ -43,7 +44,7 @@ export default function Aboutus() {
 
           <div className='flex gap-2'>
             <div>
-              <img src={chemical} alt="" />
+              <img src={chemical} alt="building icon" />
             </div>
             <div>
               <span className='text-sm  font-semibold'>No growth  <br />hormones are used
