@@ -1,12 +1,12 @@
-import Card from '../UI/Card'
+import Card from '../interface/Card'
 
 export default function CategoryCard({ categoryName, imageUrl }) {
   return (
-    <Card className='bg-green-gradient flex flex-col justify-center items-center py-7'>
+    <Card className='flex flex-col items-center justify-center bg-green-gradient py-7'>
       <div>
         <img src={imageUrl} alt={categoryName} />
       </div>
-      <p className='font-workSans font-semibold md:text-3xl text-base text-white my-3'>
+      <p className='my-3 font-workSans text-base font-semibold text-white md:text-3xl'>
         {categoryName}
       </p>
     </Card>
