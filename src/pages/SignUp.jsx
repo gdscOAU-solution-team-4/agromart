@@ -84,7 +84,8 @@ export default function SignUp() {
                 surname: surName,
                 lastname: lastName,
                 username: username,
-                phonenumber: Number(phoneNumber)
+                phonenumber: Number(phoneNumber),
+                isFarmer: false
               };
 
               StorageSave(uid);
