@@ -4,7 +4,7 @@ import Aboutus from '../components/about us/AboutUs'
 // import Footer from '../components/about us/Footer'
 // import OurTeam from '../components/about us/OurTeam'
 // import WhatWeOffer from '../components/about us/WhatWeOffer'
-// import WhyChooseUs from '../components/about us/WhyChooseUs'
+import WhyChooseUs from '../components/about us/WhyChooseUs'
 import DefaultLayout from '../layout/defaultLayout'
 import Hero from '../components/about us/Hero'
 
@@ -21,7 +21,7 @@ export default function AboutUs() {
           <Aboutus />
         </section>
         <section>
-          {/* <WhyChooseUs /> */}
+          <WhyChooseUs />
         </section>
         <section>
           {/* <OurTeam /> */}
