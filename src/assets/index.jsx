@@ -18,8 +18,10 @@ import icon2 from './img/icon2.png'
 import icon3 from './img/icon3.png'
 import icon4 from './img/icon5.png'
 import icon5 from './img/icon6.png'
+import teamPics1 from './img/teampics.jpg'
 
 export {
+  teamPics1,
   icon,
   plant,
   icon2,

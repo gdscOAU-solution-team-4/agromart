@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
         
         
        </div>
-       <div>
+       <div className='py-4'>
          <img  src={plant} alt="plant" />
        </div>
  
@@ -64,8 +64,8 @@ export default function WhyChooseUs() {
  
          </div>
 
-         <div className='grid grid-cols-4 gap-5 px-9'>
-            <div className='bg-white px-3 py-16  rounded-2xl text-center'>
+         <div className='grid md:grid-cols-4 gap-5 px-9'>
+            <div className='bg-white px-3 py-16  rounded-2xl text-center mb-4'>
                 <div className='flex justify-center'>
                 <img src={icon2} alt="icon1" />
                 </div>
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
 
             </div>
 
-            <div className='bg-white px-3 py-16  rounded-2xl text-center'>
+            <div className='bg-white px-3 py-16  rounded-2xl text-center mb-4'>
                 <div className='flex justify-center'>
                 <img src={icon3} alt="icon2" />
                 </div>
@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
 
             </div>
 
-            <div className='bg-white px-3 py-16  rounded-2xl text-center'>
+            <div className='bg-white px-3 py-16  rounded-2xl text-center mb-4'>
                 <div className='flex justify-center'>
                 <img src={icon4} alt="icon3" />
                 </div>
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
 
             </div>
 
-            <div className='bg-white px-3 py-16  rounded-2xl text-center'>
+            <div className='bg-white px-3 py-16  rounded-2xl text-center mb-4'>
                 <div className='flex justify-center'>
                 <img src={icon5} alt="icon4" />
                 </div>
