@@ -28,7 +28,7 @@ const router = createBrowserRouter(
         <Route path='/buyer-dashboard' element={<BuyerDash />} />
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
-        <Route path='/farm-dashboard' element={<FarmerDashboard />} />
+        <Route path='/farmer-dashboard' element={<FarmerDashboard />} />
         <Route path='/onboard' element={<Onboard />} />
         <Route path='/product-form' element={<Test />} />
         

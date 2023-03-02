@@ -114,7 +114,7 @@ export default function ProductForm() {
 
       setLoading(false);
       setMessages('product uploaded successfully');
-      window.location.assign('/farm-dashboard')
+      window.location.assign('/farmer-dashboard')
     } catch (error) {
       console.log(error);
       setLoading(false);
