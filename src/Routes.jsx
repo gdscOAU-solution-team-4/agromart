@@ -6,6 +6,7 @@ import {
 
 import App from './App'
 import Onboard from './components/redirect/redirect'
+import AboutUs from './pages/AboutUs'
 import BuyerDash from './pages/BuyerDash'
 import Deadline from './pages/Deadline'
 import ErrorPage from './pages/error/ErrorPage'
@@ -15,7 +16,6 @@ import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-
 // creates routes and returns router object for app
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,10 +29,11 @@ const router = createBrowserRouter(
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
         <Route path='/onboard' element={<Onboard />} />
+        <Route path='/about' element={<AboutUs />} />
         <Route path='/product-form' element={<ProductForm />} />
       </Route>
+
     </Route>
   )
 )
-
 export default router
