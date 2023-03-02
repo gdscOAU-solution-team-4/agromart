@@ -46,6 +46,7 @@ export default function Deadline() {
           </h1>
           {Object.entries(timeLeft).map((item, i) => (
             <span
+
               className={`mx-1 font-openSan text-sm font-extrabold md:text-4xl ${
                 item[0] && 'after:content-["_:"]'
               } last-of-type:after:content-none ${
