@@ -8,6 +8,7 @@ import App from './App'
 import Onboard from './components/redirect/redirect'
 import AboutUs from './pages/AboutUs'
 import BuyerDash from './pages/BuyerDash'
+import Cart from './pages/Cart'
 import Deadline from './pages/Deadline'
 import ErrorPage from './pages/error/ErrorPage'
 import FarmerOnBoard from './pages/farmer/FarmerOnBoard'
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route errorElement={<ErrorPage />}>
         <Route index element={<Deadline />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
         <Route path='/buyer-dashboard' element={<BuyerDash />} />
