@@ -1,16 +1,15 @@
 import React from 'react'
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Disclosure, Transition } from '@headlessui/react'
-
+import { useContext, useRef } from 'react'
+import { Disclosure, Transition } from '@headlessui/react'
+import { SelectedFileContext } from "../../context/selectedFileContext"
 
 
 export default function CustomDisclosure() {
-    const [selectedFile, setSelectedFile] = useState(null)
-
+    const { selectedFile, setSelectedFile } = useContext(SelectedFileContext);
     const fileInputRef = useRef(null)
 
     const handleFileSelect = (event) => {
-    setSelectedFile(event.target.files[0])
+        setSelectedFile(event.target.files[0])
     }
 
     
@@ -35,7 +34,7 @@ export default function CustomDisclosure() {
                         <img
                         src={URL.createObjectURL(selectedFile)}
                         alt="Selected Image"
-                        className="mx-auto h-60 w-auto rounded-md"
+                        className="mx-auto h-60 w-auto border-gray-300 border-2 rounded-md"
                         />
                     </div>
                     ) : (
