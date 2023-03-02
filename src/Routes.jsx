@@ -9,6 +9,7 @@ import Onboard from './components/redirect/redirect'
 import BuyerDash from './pages/BuyerDash'
 import ErrorPage from './pages/error/ErrorPage'
 import FarmerOnBoard from './pages/farmer/FarmerOnBoard'
+import ProductForm from './pages/farmer/productForm'
 import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
@@ -18,7 +19,8 @@ import SignUp from './pages/SignUp'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />} errorElement={<ErrorPage />}>
-      <Route errorElement={<ErrorPage />}>
+
+        <Route errorElement={<ErrorPage />}>
         <Route index element={<Home />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
@@ -26,6 +28,8 @@ const router = createBrowserRouter(
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
         <Route path='/onboard' element={<Onboard />} />
+        <Route path='/product-form' element={<ProductForm />} />
+        
       </Route>
     </Route>
   )

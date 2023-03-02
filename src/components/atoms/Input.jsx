@@ -6,7 +6,7 @@ const Input = ({ type, placeholder, label, onChange, defaultValue }) => {
         id={label}
         type={type}
         value={defaultValue}
-        className='  outline-none w-full bg-white border border-solid border-[#F1F1F1] pl-4 py-3 rounded-lg'
+        className=' shadow outline-none w-full bg-white pl-4 py-3 rounded-lg'
         placeholder={placeholder}
       />
     </div>

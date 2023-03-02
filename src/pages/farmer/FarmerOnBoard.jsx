@@ -16,11 +16,14 @@ import { Fragment } from 'react'
 import Toast from '../../components/toast/toast'
 
 
-export default function FarmerOnBoard({ docRef, newData }) {
+export default function FarmerOnBoard() {
   const[farmName, setFarmName] = useState("");
   const[farmAddress, setFarmAddress] = useState("");
   let [isOpen, setIsOpen] = useState(false)
   const [showToast, setShowToast] = useState(false);
+  const [messages, setMessages] = useState("" || null);
+  
+
     
   let userSurname = useUserData()?.surname
   const [updateDocument, isUpdating, message] = useDocumentUpdate();
@@ -39,8 +42,8 @@ export default function FarmerOnBoard({ docRef, newData }) {
       let isValid = true
       if ( farmName == '' || farmAddress == '' ) {
         isValid = false
-        message('invalid credential')
-        setIsLoading(false)
+        setMessages('invalid credential')
+        let isUpdating = false
       }
 
         return isValid
@@ -70,6 +73,7 @@ export default function FarmerOnBoard({ docRef, newData }) {
     <AuthLayout
       authImg={loginImg}
       buttonContent={isUpdating ? 'Updating...' : 'continue'}
+      disabled={isUpdating}
       heading={
         <span className='flex items-center justify-center gap-1 text-center'>
           Hello <span>{userSurname || "user"} 👋🏾</span>
@@ -77,10 +81,10 @@ export default function FarmerOnBoard({ docRef, newData }) {
       }
       subHeading={'Kindly fill the form below'}
       handleSubmit={handleClick}
-      disabled={isUpdating}
+
     >
       {showToast && (
-        <Toast message={message} onClose={handleCloseToast} />
+        <Toast message={messages} onClose={handleCloseToast} />
       )}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={farmerDashboard}>
