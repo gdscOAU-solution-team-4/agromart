@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",
+    "@heroicons/react": "^2.0.16",
     "firebase": "^9.17.1",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
-    "yarn": "^1.22.19"
+    "swiper": "^9.1.0"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.0",

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "agromart-379300",
+  "private_key_id": "b5edf95e6ae48de81fc995acd2d64a0a20a508ae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZWqy5NoPf+Uva\nAZK5WObRuu3lRQJunD3AIt1FzJ1BKO4ixUnxQgNDhosQIEZIN4yHdg5tY3lJO78s\njVeYgg6p/YPi9y07FEIlNZr08y99ptmaCWES7SrmbhJvkqTCcL3NdPz3gkPqy7BK\n/jp3l20eOqUq98dscY9j1AAulNsX0L61vX9RyjgO1WQDIBOKJdH40x1WRLdI6P/3\nK3qVhHnP2qqCeAItKGIfGV+fTi4p89Y5+UksL+pOHr4hVv2Fqe4gVzIn52c0oNnv\nSQLEFDm13qvxd8AA0BUhFSupZhzeJtRvK9WC6CU8yB0lE0doD512XaeAmhVLl/Au\n++GjDvO7AgMBAAECggEANtQwEBJZKRGBWKMaWfFaqV7Lop6/RVvQSitM8KE9Eih3\np+/gxYTkFNb8TloztqtBr8b6VorruM7HRb8NNAZABvAQoOvd/JL8KUCWtABkmOi4\nQTYcQn+QSI3PQpvsE2bqvZQXw8iLzt1fnRhzQAHgbh/qoMexQekCKt+H5x+qi8M0\n3HMdVSPIRPT4l2HJfCZ30/dANblCpD13Gd3MC3299cX3y10bPzj0jzobY2xJBGxK\nSQXdDTzSS0QCYqFXNjAgi9n4Z0BxelRpQiDgh38u9KOiHOcrw5z649ih3/QRr07Y\nHIPLaVyBuLLpeZvwuDfonsKoElvOE9vwIWaIy1Mp2QKBgQDW/5xctKJz3qeKG1wh\nXkX+eDaoqZGEBssKrLgQDHk6WEfN0NKk5VDirf4VyfKWhu732g5n38mid+L1+47x\nmWnEgp41GX7iGGXS+SJk7a9mgLBMJykmYl4nFBEtkec0l4SwI729GpYh0geeno+t\nuEBTCWYqxqZ5yvlSsA8BJTQ5qQKBgQC2mYsQv3tdEMsHpBP5+QyxHBiVX/LuD9TX\nW11Uz/aknWdk9q9e8tmzoXouJeHLwSMdD8LexgdVIHEA6i45JgPsJlFq8/3/6NU7\n0u5e2+isji3TPT7KApn/vbZ+7etj5LatVC1KsLPT/4zBOwq5DrfDtnyT3GJxBb2g\nlBukKEPIwwKBgC2hIDlYqOW4iow4FEyMqoRAVTFkk5qWqn8AeywEybHFTK/0stAG\nTy1cygEr1A14Y708jTQkfbG6ifO0yPijm5v2MMeKOrCXhvzInTEYdNJnW4M+CHC6\nDctzadXnEk/KHIIZg8pfmx9gaPeUJWA0K4q0AvfvIyPUHSgcb4LJt5TJAoGALEUj\nmybhcNnOb4bPNQ61jgcCysxdaGw8LQ5AnXxiDtz+oVLRh9KXB18B8UhL6wtjSPt2\nQm5+fpwD6bXdCQv3bXyIxsZq8W1wrTVhh2wHiDZcU9eIbo+c6I0FPtbN+AUOaQ18\ngZw/rQlLBdobqmwwD2oh3/NRhpdetxzRasY8UOMCgYEAuCLnsjYyItXB9J4A3Ya6\nWRB8CiVW4USx2iKevFEokwzrelYq/FxV7YB34lTX26sjt+GgA1zVGWrzDFOg1FBH\nbxIy6Jg59w6oefEs6bsxPw2Gir7sjbmEdpGVG/Njk3YdiLKZM24bTW08ovCTnqNI\ncisWGbWnQ8UIu5sPrFigL6g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "agromart@agromart-379300.iam.gserviceaccount.com",
+  "client_id": "106676365876413946560",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/agromart%40agromart-379300.iam.gserviceaccount.com"
+}

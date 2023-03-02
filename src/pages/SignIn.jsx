@@ -74,7 +74,7 @@ export default function SignIn() {
         questionLinkText={' Create One'}
         questionLink={'/register'}
       >
-        <form className='px-14 pt-6'>
+        <form className='md:px-14 px-8 pt-6'>
           <Input
             type={'email'}
             placeholder={'email address'}
@@ -89,7 +89,7 @@ export default function SignIn() {
             defaultValue={password}
             onChange={e => setPassword(e.target.value)}
           />
-          <div className='flex justify-between items-center py-4'>
+          <div className='flex  flex-wrap gap-3 justify-between items-center py-4'>
             <div className='flex justify-center items-center gap-2'>
               <div>
                 <input type="checkbox" value={remember} onChange={e => setRemember(e.target.value)}/>
