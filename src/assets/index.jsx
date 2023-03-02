@@ -1,23 +1,24 @@
 import buyerIcon from './icon/buyer.png'
 import farmerIcon from './icon/farmer.png'
+import chemical from './img/Chemical.png'
 import fruits from './img/flower.png'
 import forgotPassword from './img/forgot-password.png'
-import mainImg from './img/Image.png'
-import loginImg from './img/login.png'
-import offerImg1 from './img/offer-img1.png'
-import offerImg2 from './img/offer-img2.png'
-import registerImg from './img/register.png'
-import updatePassword from './img/update-password.png'
 import fruit from './img/fruit2.png'
-import tractor from './img/Tractor.png'
-import chemical from './img/Chemical.png'
 import icon from './img/icon.png'
-import plant from './img/plant.png'
 import icon2 from './img/icon2.png'
 import icon3 from './img/icon3.png'
 import icon4 from './img/icon5.png'
 import icon5 from './img/icon6.png'
+import mainImg from './img/Image.png'
+import loginImg from './img/login.png'
+import offerImg1 from './img/offer-img1.png'
+import offerImg2 from './img/offer-img2.png'
+import plant from './img/plant.png'
+import registerImg from './img/register.png'
 import teamPics1 from './img/teampics.jpg'
+import tomatoes from './img/tomatoes.png'
+import tractor from './img/Tractor.png'
+import updatePassword from './img/update-password.png'
 
 export {
   teamPics1,
@@ -41,5 +42,5 @@ export {
   updatePassword,
   buyerIcon,
   farmerIcon,
-  banner,
+  // banner,
 }
