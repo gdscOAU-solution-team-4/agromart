@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-
 import { mainImg } from '../../assets'
+import Button from '../atoms/Button'
 
 export default function Hero() {
 

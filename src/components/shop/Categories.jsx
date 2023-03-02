@@ -1,5 +1,12 @@
-import { Fragment } from 'react'
+import { A11y, Autoplay, Keyboard, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// import { register,  } from 'swiper/element/bundle'
 import CategoryCard from './CategoryCard'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const categories = [
   {
@@ -26,13 +33,53 @@ const categories = [
 
 export default function Categories() {
   return (
-    <div className='flex flex-row px-0 w-full flex-nowrap space-x-4 pt-8 gap-8 justify-items-center overflow-x-auto'>
-      {categories.map(({ imageUrl, categoryName }, i) => (
-        <div className="flex-none w-1/3 overflow-hidden">
-          <CategoryCard key={i} imageUrl={imageUrl} categoryName={categoryName} />
-        </div>
-        
-      ))}
+    <div className='flex w-full gap-8 space-x-4 px-0 pt-8'>
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+        pagination={{ clickable: true }}
+        keyboard={{
+          enabled: true,
+        }}
+        a11y={{
+          enabled: true,
+          containerMessage: 'wraps slides of reviews from clients',
+          containerRoleDescriptionMessage: 'container for reviews from clients',
+          itemRoleDescriptionMessage: 'This is a review from our client',
+        }}
+        onKeyPress={(swiper, key) => {
+          if (key !== 75) return
+          swiper.autoplay.pause()
+        }}
+        style={{
+          height: 'fit-content',
+          paddingBottom: '35px',
+        }}
+        modules={[Pagination, Autoplay, Keyboard, A11y]}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        }}
+      >
+        {categories.map(({ imageUrl, categoryName }, i) => (
+          <SwiperSlide key={i}>
+            <div className='flex-none overflow-hidden'>
+              <CategoryCard imageUrl={imageUrl} categoryName={categoryName} />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   )
 }
