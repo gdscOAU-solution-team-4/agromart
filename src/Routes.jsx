@@ -5,10 +5,11 @@ import {
 } from 'react-router-dom'
 
 import App from './App'
+import Onboard from './components/redirect/redirect'
 import BuyerDash from './pages/BuyerDash'
-import Cart from './pages/Cart'
-import ErrorPage from './pages/ErrorPage'
-import FarmerOnBoard from './pages/FarmerOnBoard'
+import ErrorPage from './pages/error/ErrorPage'
+import FarmerOnBoard from './pages/farmer/FarmerOnBoard'
+import ProductForm from './pages/farmer/productForm'
 import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
@@ -22,10 +23,11 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
-        <Route path='/shop' element={<BuyerDash />} />
+        <Route path='/buyer-dashboard' element={<BuyerDash />} />
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/onboard' element={<Onboard />} />
+        <Route path='/product-form' element={<ProductForm />} />
       </Route>
     </Route>
   )

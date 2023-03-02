@@ -1,4 +1,4 @@
-import Card from '../UI/Card'
+import Card from '../interface/Card'
 
 export default function CategoryCard({ categoryName, imageUrl }) {
   return (

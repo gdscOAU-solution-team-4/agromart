@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import CategoryCard from './CategoryCard'
 
 const categories = [
@@ -13,13 +14,24 @@ const categories = [
     imageUrl: '/food.png',
     categoryName: 'Food',
   },
+  {
+    imageUrl: '/food.png',
+    categoryName: 'Food',
+  },
+  {
+    imageUrl: '/food.png',
+    categoryName: 'Food',
+  },
 ]
 
 export default function Categories() {
   return (
-    <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+    <div className='flex flex-row px-0 w-full flex-nowrap space-x-4 pt-8 gap-8 justify-items-center overflow-x-auto'>
       {categories.map(({ imageUrl, categoryName }, i) => (
-        <CategoryCard key={i} imageUrl={imageUrl} categoryName={categoryName} />
+        <div className="flex-none w-1/3 overflow-hidden">
+          <CategoryCard key={i} imageUrl={imageUrl} categoryName={categoryName} />
+        </div>
+        
       ))}
     </div>
   )

@@ -19,7 +19,7 @@ export default function ForgotPassword() {
         questionLinkText={' Create One'}
         questionLink={'/register'}
       >
-        <form className='px-14 pt-6'>
+        <form className='md:px-14 px-8 pt-6'>
 
           <Input
             type={'email'}

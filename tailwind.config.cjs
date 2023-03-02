@@ -5,6 +5,8 @@ module.exports = {
     backgroundImage: {
       'green-gradient':
         'linear-gradient(143.36deg, #0E563F 3.5%, #15BE77 98.26%)',
+    productBanner : 
+        'url("../src/assets/img/productsBG.png")',
     },
     extend: {
       fontFamily: {
@@ -22,6 +24,7 @@ module.exports = {
         'green-100': '#0E563F',
         'blue-100': '#09051C',
         orange: '#FF7C32',
+        primary: "#0E563F"
       },
     },
   },

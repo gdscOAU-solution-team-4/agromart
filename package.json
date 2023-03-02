@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.12",
+    "@heroicons/react": "^2.0.16",
     "firebase": "^9.17.1",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.3",

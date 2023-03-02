@@ -1,6 +1,6 @@
 import Header from '../components/shop/Header'
 import Products from '../components/shop/Products'
-import SectionFragment from '../components/UI/SectionFragment'
+import SectionFragment from '../components/interface/SectionFragment'
 import DefaultLayout from '../layout/defaultLayout'
 
 export default function BuyerDash() {
