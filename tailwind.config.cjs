@@ -5,6 +5,7 @@ module.exports = {
     backgroundImage: {
       'green-gradient':
         'linear-gradient(143.36deg, #0E563F 3.5%, #15BE77 98.26%)',
+      'about-banner':   'url("../src/assets/img/about-banner.png")',
     productBanner : 
         'url("../src/assets/img/productsBG.png")',
     },
