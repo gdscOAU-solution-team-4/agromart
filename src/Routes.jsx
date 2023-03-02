@@ -7,6 +7,7 @@ import {
 import App from './App'
 import Onboard from './components/redirect/redirect'
 import BuyerDash from './pages/BuyerDash'
+import Deadline from './pages/Deadline'
 import ErrorPage from './pages/error/ErrorPage'
 import FarmerOnBoard from './pages/farmer/FarmerOnBoard'
 import ProductForm from './pages/farmer/productForm'
@@ -19,9 +20,9 @@ import SignUp from './pages/SignUp'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />} errorElement={<ErrorPage />}>
-
-        <Route errorElement={<ErrorPage />}>
-        <Route index element={<Home />} />
+      <Route errorElement={<ErrorPage />}>
+        <Route index element={<Deadline />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
         <Route path='/buyer-dashboard' element={<BuyerDash />} />
@@ -29,7 +30,6 @@ const router = createBrowserRouter(
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
         <Route path='/onboard' element={<Onboard />} />
         <Route path='/product-form' element={<ProductForm />} />
-        
       </Route>
     </Route>
   )
