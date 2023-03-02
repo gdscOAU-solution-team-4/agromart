@@ -2,7 +2,7 @@ import React from 'react'
 import Aboutus from '../components/about us/AboutUs'
 // some imports are empty that's why you got empty page (check console for errors)
 // import Footer from '../components/about us/Footer'
-// import OurTeam from '../components/about us/OurTeam'
+import OurTeam from '../components/about us/OurTeam'
 // import WhatWeOffer from '../components/about us/WhatWeOffer'
 import WhyChooseUs from '../components/about us/WhyChooseUs'
 import DefaultLayout from '../layout/defaultLayout'
@@ -24,7 +24,7 @@ export default function AboutUs() {
           <WhyChooseUs />
         </section>
         <section>
-          {/* <OurTeam /> */}
+           <OurTeam /> 
         </section>
         <section>
           {/* <WhatWeOffer /> */}
