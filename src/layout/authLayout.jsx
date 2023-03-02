@@ -21,11 +21,11 @@ const AuthLayout = ({
       <Navbar />
       
       <div className=' w-full flex sticky top-0 right-0  bg-[#F9F8F8]'>
-        <div className="lg:w-1/2 w-full md:h-screen lg:h-auto  md:block hidden ">
-          <img src={authImg} alt="auth img" className='w-full  '/>
+        <div className="lg:w-1/2 w-full md:h-auto md:block hidden  ">
+          <img src={authImg} alt="auth img" className='w-full h-full object-cover '/>
        </div>
 
-      <div className="w-full h-auto lg:h-auto lg:w-1/2 flex flex-col">
+      <div className="w-full h-auto lg:w-1/2 flex flex-col">
       <div className="pt-24 md:pt-10">
       <div className="">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>

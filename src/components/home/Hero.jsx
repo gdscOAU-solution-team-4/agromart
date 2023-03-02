@@ -23,8 +23,8 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className='lg:w-1/2 h-max w-full pt-10 md:pt-0 flex justify-end items-end'>
-        <img  src={mainImg} alt='main image' className='w-[90%] ' />
+      <div className='lg:w-1/2 h-auto w-full pt-10 md:pt-0 flex justify-end items-end'>
+        <img  src={mainImg} alt='main image' className='w-[90%] h-full object-cover' />
       </div>
     </div>
   )
