@@ -26,7 +26,7 @@ const AuthLayout = ({
        </div>
 
       <div className="w-full h-auto lg:w-1/2 flex flex-col">
-      <div className="pt-24 md:pt-10">
+      <div className="pt-24">
       <div className="">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>
           <p className='text-xl my-5 font-dmSan text-[#141414] font-400 text-center'>{subHeading || 'Create a new account '}</p>
