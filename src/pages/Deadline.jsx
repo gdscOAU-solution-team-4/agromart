@@ -41,12 +41,12 @@ export default function Deadline() {
         className={`flex min-h-screen flex-col items-center justify-center bg-white-100 px-1 md:px-0 lg:px-5`}
       >
         <div className='px-7 md:px-4 lg:px-20'>
-          <h1 className='text-center font-workSans text-5xl text-black'>
+          <h1 className='text-center font-workSans text-base text-black md:text-5xl'>
             Deadline
           </h1>
           {Object.entries(timeLeft).map((item, i) => (
             <span
-              className={`mx-1 font-openSan text-4xl font-extrabold ${
+              className={`mx-1 font-openSan text-sm font-extrabold md:text-4xl ${
                 item[0] && 'after:content-["_:"]'
               } last-of-type:after:content-none ${
                 timeLeft.days < 5 ? 'text-red-700' : 'text-primary'
