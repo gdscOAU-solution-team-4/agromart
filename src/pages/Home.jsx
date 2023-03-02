@@ -9,15 +9,9 @@ export default function Home() {
   return (
     <DefaultLayout>
       <main>
-        <section>
-          <Hero />
-        </section>
-        <section>
-          <Offer />
-        </section>
-        <section>
-          <About />
-        </section>
+        <Hero />
+        <Offer />
+        <About />
       </main>
     </DefaultLayout>
   )
