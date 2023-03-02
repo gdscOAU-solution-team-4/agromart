@@ -21,12 +21,12 @@ const AuthLayout = ({
       <Navbar />
       
       <div className=' w-full flex sticky top-0 right-0  bg-[#F9F8F8]'>
-        <div className="lg:w-1/2 lg:block hidden ">
+        <div className="lg:w-1/2 w-full md:h-screen lg:h-auto  md:block hidden ">
           <img src={authImg} alt="auth img" className='w-full  '/>
        </div>
 
-      <div className="w-full h-screen lg:h-auto lg:w-1/2 flex flex-col">
-      <div className="pt-24">
+      <div className="w-full h-auto lg:h-auto lg:w-1/2 flex flex-col">
+      <div className="pt-24 md:pt-10">
       <div className="">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>
           <p className='text-xl my-5 font-dmSan text-[#141414] font-400 text-center'>{subHeading || 'Create a new account '}</p>
@@ -41,7 +41,7 @@ const AuthLayout = ({
                 <button onClick={handleSubmit} disabled={disabled} className='bg-[#0E563F]   w-1/2 py-3 rounded-xl text-white font-semibold capitalize'>{ buttonContent || "Get Started" }</button>
               </Link>
             </div>
-            <div className='pt-8 text-sm font-dmSan font-500 text-[#141414] text-center '>
+            <div className='py-8 text-sm font-dmSan font-500 text-[#141414] text-center '>
               {quesion}{' '}
               <span>
                 <Link to={questionLink} className='text-[#0E563F]'>
