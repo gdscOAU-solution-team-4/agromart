@@ -2,6 +2,7 @@ import { teamPics1 } from "../../assets";
 
 export default function OurTeam() {
     return(
+        // container
         <div className="bg-white py-20 md:px-20 flex flex-col text-center items-center justify-center">
             <div>
             <h5 className='font-yellowtail text-xl text-[#68A47F]'>
