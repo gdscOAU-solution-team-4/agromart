@@ -84,7 +84,8 @@ export default function SignUp() {
                 surname: surName,
                 lastname: lastName,
                 username: username,
-                phonenumber: Number(phoneNumber)
+                phonenumber: Number(phoneNumber),
+                isFarmer: false
               };
 
               StorageSave(uid);
@@ -128,7 +129,7 @@ export default function SignUp() {
         buttonContent={isLoading ? 'please wait...' : 'get started'}
         disabled={isLoading}
       >
-        <form className='px-14 pt-6' onSubmit={handleSubmit}>
+        <form className='md:px-14 px-8 pt-6' onSubmit={handleSubmit}>
           <Input
             type={'email'}
             placeholder={'email address'}
