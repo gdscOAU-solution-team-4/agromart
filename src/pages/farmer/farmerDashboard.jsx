@@ -3,7 +3,7 @@ import DefaultLayout from "../../layout/defaultLayout"
 export default function FarmerDashboard() {
   return (
     <DefaultLayout>
-        
+        hello
     </DefaultLayout>
   )
 }

@@ -3,7 +3,7 @@ import Input from '../../components/atoms/Input'
 import AuthLayout from '../../layout/authLayout'
 import useUserData from '../../hooks/useUserData'
 import useDocumentUpdate from '../../hooks/useDocumentUpdate'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useContext, useEffect } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
@@ -17,6 +17,10 @@ import {
 import { get } from '../../utils/storage';
 import Toast from '../../components/toast/toast'
 import CustomDisclosure from '../../components/molecule/disclosure'
+import axios from 'axios';
+import { SelectedFileContext } from "../../context/selectedFileContext"
+
+
 
   const categories = [
   { id: 1, name: 'Fruits' },
@@ -34,16 +38,18 @@ export default function ProductForm() {
   const[productPrice, setProductPrice] = useState(0);
   const[productDealPrice, setProductDealPrice] = useState(0);
   const[productRatingStar, setProductRatingStar] = useState(0);
-  const[productImgUrl, setProductImgUrl] = useState("");
+  const[productDescription, setProductDescription] = useState("");
 
   const [showToast, setShowToast] = useState(false);
   const [messages, setMessages] = useState("" || null);
     
   let userSurname = useUserData()?.surname
-  const [updateDocument, isUpdating, message] = useDocumentUpdate();
 
   const [selected, setSelected] = useState(categories[0])
   const [query, setQuery] = useState('')
+  const { selectedFile } = useContext(SelectedFileContext);
+  const [loading, setLoading] = useState(false);
+
 
   const filteredCategory =
     query === ''
@@ -57,18 +63,30 @@ export default function ProductForm() {
 
 
   
-    const validateForm = () => {
-      let isValid = true
-      if ( productName == '' || productPrice == undefined ) {
-        isValid = false
+  const validateForm = () => {
+    let isValid = true
+    if ( productName == '' || productPrice == 0 || productDescription == "") {
+      isValid = false
         setMessages('invalid credential')
-      }
-
-        return isValid
     }
-  const handleClick = async() => {
-    setShowToast(false)
-    if (validateForm()) {
+
+      return isValid
+  }
+
+
+  const uploadData = async() =>{
+    
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+    formData.append('upload_preset', 'pikg6hci');
+
+    try {
+      const { data } = await axios.post(
+        'https://api.cloudinary.com/v1_1/phantom1245/image/upload',
+        formData
+      );
+
+      const imageUrl = data.secure_url;
       const useId = get();
       const docRef = doc(db, "users", useId);
       const productRef = doc(db, "generalProducts", "product")
@@ -80,22 +98,40 @@ export default function ProductForm() {
           price: productPrice,
           dealPrice: productDealPrice,
           ratingStar: productRatingStar,
-          imgUrl: productImgUrl,
+          imgUrl: imageUrl,
+          description: productDescription,
         }
       ]
         
       await updateDoc(productRef, { products: arrayUnion(...products)})
       await updateDoc(docRef, { products: arrayUnion(...products)})
       try{
-        console.log("God i thank you")
+        setMessages('added successfully')
       }
       catch(err){
         console.log(err)
       }
 
-      setShowToast(false)
-      setMessages('added successfully')
+      setLoading(false);
+      setMessages('product uploaded successfully');
+      window.location.assign('/farmer-dashboard')
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      setMessages('Error uploading image');
+    }      
+      
+  }
+
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setShowToast(true)
+    if(validateForm()){
+      uploadData()
     }
+
 
   }
 
@@ -103,11 +139,12 @@ export default function ProductForm() {
     setShowToast(false);
   };
 
+
   return (
     <AuthLayout
       authImg={loginImg}
-      buttonContent={isUpdating ? 'Updating...' : 'continue'}
-      disabled={isUpdating}
+      buttonContent={loading ? 'please wait...' : 'continue'}
+      disabled={loading}
       heading={
         <span className='flex items-center justify-center gap-1 text-center'>
           Hello <span>{userSurname || "user"} 👋🏾</span>
@@ -217,8 +254,19 @@ export default function ProductForm() {
             </div>
           </Combobox>
         </div>
-        <CustomDisclosure/>
+        <textarea 
+          rows="4" 
+          value={productDescription}
+          className="shadow outline-none w-full bg-white pl-4 py-3 mt-2 rounded-lg" 
+          placeholder="description..."
+          onChange={e => setProductDescription(e.target.value)}
+          >
+
+        </textarea>
+        <CustomDisclosure />
+        
       </form>
     </AuthLayout>
   )
 }
+

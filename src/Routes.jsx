@@ -6,13 +6,14 @@ import {
 
 import App from './App'
 import Onboard from './components/redirect/redirect'
+import Test from './context'
 import AboutUs from './pages/AboutUs'
 import BuyerDash from './pages/BuyerDash'
 import Cart from './pages/Cart'
 import Deadline from './pages/Deadline'
 import ErrorPage from './pages/error/ErrorPage'
+import FarmerDashboard from './pages/farmer/farmerDashboard'
 import FarmerOnBoard from './pages/farmer/FarmerOnBoard'
-import ProductForm from './pages/farmer/productForm'
 import ForgotPassword from './pages/forgotPassword'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
@@ -30,9 +31,10 @@ const router = createBrowserRouter(
         <Route path='/buyer-dashboard' element={<BuyerDash />} />
         <Route path='/forgotten-password' element={<ForgotPassword />} />
         <Route path='/onboard/supplier' element={<FarmerOnBoard />} />
+        <Route path='/farmer-dashboard' element={<FarmerDashboard />} />
         <Route path='/onboard' element={<Onboard />} />
+        <Route path='/product-form' element={<Test />} />
         <Route path='/about' element={<AboutUs />} />
-        <Route path='/product-form' element={<ProductForm />} />
       </Route>
 
     </Route>
