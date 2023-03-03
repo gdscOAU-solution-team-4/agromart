@@ -5,7 +5,7 @@ export default function CartItem({ imgUrl, name, category, price }) {
   return (
     <Card className='my-7 flex items-center justify-between gap-10 bg-white shadow-[12px_26px_50px_rgba(90,108,234,0.07)]'>
       <div className='flex items-center  gap-5'>
-        <div className='h-[7.8125rem] max-w-[8.875rem] rounded-2xl'>
+        <div className='hidden aspect-square max-w-[8.875rem] rounded-2xl md:block'>
           <img
             src={imgUrl}
             alt={name}

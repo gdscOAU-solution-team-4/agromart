@@ -3,7 +3,7 @@ import Card from '../interface/Card'
 
 export default function Summary() {
   return (
-    <Card className='h-max grow basis-2/5 bg-[linear-gradient(98.81deg,#0E563F_-0.82%,#15BE77_101.53%)] text-[#fefeff]'>
+    <Card className='h-max grow basis-1/3 bg-[linear-gradient(98.81deg,#0E563F_-0.82%,#15BE77_101.53%)] text-[#fefeff]'>
       <div className='font-workSans text-xs font-medium md:text-sm'>
         <p className='my-2 flex items-center justify-between'>
           <span>Sub-Total</span>
@@ -26,7 +26,7 @@ export default function Summary() {
       </div>
       <div>
         <Button className='rounded-[.9375rem] bg-[#fefeff] hover:bg-[#efefff]'>
-          <span className='bg-[linear-gradient(98.81deg,#0E563F_-0.82%,#15BE77_101.53%)] bg-clip-text text-xs text-transparent md:text-sm font-bold'>
+          <span className='bg-[linear-gradient(98.81deg,#0E563F_-0.82%,#15BE77_101.53%)] bg-clip-text text-xs font-bold text-transparent md:text-sm'>
             Check Out
           </span>
         </Button>

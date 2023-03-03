@@ -38,9 +38,9 @@ export default function Cart() {
           <h1 className='font-workSans text-2xl font-bold text-black md:text-[3.25rem] md:leading-[4.2581rem]'>
             Order details
           </h1>
-          <div className='flex flex-wrap justify-center gap-10 md:justify-between'>
+          <div className='flex flex-col flex-wrap justify-center gap-10 md:justify-between lg:flex-row'>
             {/* items */}
-            <div>
+            <div className='grow basis-2/5'>
               {cartItems.map((item, index) => (
                 <CartItem
                   key={index}
