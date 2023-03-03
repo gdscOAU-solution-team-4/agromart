@@ -11,7 +11,7 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: 'Live healthy Stay Happy',
+        name: 'agromart live',
         short_name: 'Agromart',
         theme_color: '#ffffff',
         start_url: '/',
