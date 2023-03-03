@@ -11,7 +11,7 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: 'Agro market',
+        name: 'Agro Market',
         short_name: 'Agromart',
         theme_color: '#F9F8F8',
         start_url: '/',
