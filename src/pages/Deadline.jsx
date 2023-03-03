@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import DefaultLayout from '../layout/defaultLayout'
+import { Link } from 'react-router-dom'
 
 //* calculates deadline
 function calculateDeadline() {
@@ -57,6 +58,13 @@ export default function Deadline() {
               {item[0] ? `${item[1]} ${item[0]}` : ''}
             </span>
           ))}
+        </div>
+        <div className='pt-5 flex justify-center items-center '>
+          <Link to='/register'>
+            <button className='bg-[#0E563F] w-40 lg:w-32 py-3 rounded-xl text-white font-semibold'>
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </DefaultLayout>
