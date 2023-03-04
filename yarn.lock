@@ -4,7 +4,6 @@ __metadata:
 
 "@ampproject/remapping@^2.2.0":
   version: 2.2.0
-  resolution: "@ampproject/remapping@npm:2.2.0"
   dependencies:
     "@jridgewell/gen-mapping": ^0.1.0
     "@jridgewell/trace-mapping": ^0.3.9
