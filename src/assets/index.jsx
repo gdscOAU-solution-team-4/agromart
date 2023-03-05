@@ -43,7 +43,7 @@ export {
   updatePassword,
   buyerIcon,
   farmerIcon,
-  vegBowl,
+  VegBowl,
   mailBoxQ,
   // banner,
 }

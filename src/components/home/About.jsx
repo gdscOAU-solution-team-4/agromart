@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { fruits, mailBoxQ, vegBowl } from '../../assets'
+import { fruits, mailBoxQ, VegBowl } from '../../assets'
 import Button from '../atoms/Button'
 
 export default function About() {
@@ -26,7 +26,7 @@ export default function About() {
               <div className='my-6'>
                 <div className='my-3 flex flex-col items-center gap-3 md:flex-row'>
                   <span className='inline-block rounded-[1.25rem] bg-white p-3 text-center md:p-5'>
-                    <img src={vegBowl} alt='vegetable Bowl' />
+                    <img src={VegBowl} alt='vegetable Bowl' />
                   </span>
                   <div>
                     <h4 className='my-1 font-roboto text-sm font-extrabold leading-none text-[#274C5B] md:text-[25px]'>
