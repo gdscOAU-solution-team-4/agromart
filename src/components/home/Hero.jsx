@@ -3,28 +3,30 @@ import { mainImg } from '../../assets'
 import Button from '../atoms/Button'
 
 export default function Hero() {
-
   return (
-    <div className='w-full h-auto mb-5 flex flex-col md:flex-row items-center pt-14 md:pt-20 bg-[#F1EFF0] '>
-      <div className='w-full lg:w-1/2 flex flex-col px-14 lg:pl-20'>
-        <h5 className='font-yellowtail text-xl text-[#68A47F]'>
-          100% Natural Food
-        </h5>
-        <h2 className='lg:text-6xl lg:w-[90%] md:text-5xl text-center md:text-left py-3 text-3xl lg:leading-[70px] font-roboto text-slate-900 font-bold'>
-          Choose the best
-          healthier way
-          of life
-        </h2>
-        <div className='pt-5 flex justify-center items-center md:justify-start md:items-start'>
-          <Link to='/register'>
-            <button className='bg-[#0E563F] w-40 lg:w-32 py-3 rounded-xl text-white font-semibold'>
+    <div className=' min-h-[43.75rem] bg-[#F1EFF0] px-1 md:px-0 lg:px-5'>
+      <div className='flex min-h-[43.75rem] items-center px-7 md:px-4 lg:px-20'>
+        <div className='bg-black'>
+          <div className='flex flex-col-reverse'>
+            <h1 className='font-roboto text-[2rem] font-extrabold leading-none text-[#153A49] md:text-[4rem]'>
+              Healthy Harvests for a Healthy Lifestyle
+            </h1>
+            <h2 className='font-yellowtail text-2xl text-[#68A47F] md:text-[1.875rem]'>
+              100% Natural Agricultural product
+            </h2>
+          </div>
+          <Link
+            to='/register'
+            className='inline-block border-[.625rem] border-transparent'
+          >
+            <Button className='rounded-2xl bg-[#0E563F] px-6 py-5 text-white'>
               Get Started
-            </button>
+            </Button>
           </Link>
         </div>
-      </div>
-      <div className='lg:w-1/2 h-auto w-full pt-10 md:pt-0 flex justify-end items-end'>
-        <img  src={mainImg} alt='main image' className='w-[90%] h-full object-cover' />
+        <div className=''>
+          <img src={mainImg} alt='delicacy on plates' aria-hidden />
+        </div>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ export default function Navbar() {
   //never (smiles)
 
   let links = [
-    { name: 'Home', link: '/' },
+    { name: 'Home', link: '/home' },
     { name: 'About', link: '/about' },
     { name: 'Pages', link: '/pages' },
     { name: 'Shop', link: '/shop' },
