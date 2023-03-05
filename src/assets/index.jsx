@@ -1,7 +1,6 @@
 import buyerIcon from './icon/buyer.png'
 import farmerIcon from './icon/farmer.png'
 import mailBoxQ from './icon/mailboxQuality.svg'
-import vegBowl from './icon/vegBowl.svg'
 import chemical from './img/Chemical.png'
 import fruits from './img/flower.png'
 import forgotPassword from './img/forgot-password.png'
