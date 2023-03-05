@@ -2,12 +2,12 @@ import { offerImg1, offerImg2 } from '../../assets'
 
 export default function Offer() {
   return (
-    <div className=' py-14 flex flex-col md:flex-row gap-5'>
-      <div className='md:w-1/2 w-full  flex justify-center items-center'>
+    <div className=' flex flex-col gap-5 py-14 md:flex-row' aria-hidden>
+      <div className='flex w-full items-center justify-center md:w-1/2'>
         <img src={offerImg1} alt='' className='w-[75%]' />
       </div>
-      <div className='md:w-1/2 w-full  flex justify-center items-center'>
-        <img src={offerImg2} alt='' className='w-[75%]' />
+      <div className='flex w-full  items-center justify-center md:w-1/2'>
+        <img src={offerImg2} alt='offers' className='w-[75%]' aria-hidden />
       </div>
     </div>
   )
