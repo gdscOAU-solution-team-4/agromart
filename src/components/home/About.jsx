@@ -1,4 +1,6 @@
-import { fruits } from '../../assets'
+import { Link } from 'react-router-dom'
+import { fruits, mailBoxQ, vegBowl } from '../../assets'
+import Button from '../atoms/Button'
 
 export default function About() {
   return (
@@ -21,8 +23,43 @@ export default function About() {
                 Lorem had ceased to been the industry's standard dummy text ever
                 since the 1500s, when an unknown printer took a galley.
               </p>
+              <div className='my-6'>
+                <div className='my-3 flex flex-col items-center gap-3 md:flex-row'>
+                  <span className='inline-block rounded-[1.25rem] bg-white p-3 text-center md:p-5'>
+                    <img src={vegBowl} alt='vegetable Bowl' />
+                  </span>
+                  <div>
+                    <h4 className='my-1 font-roboto text-sm font-extrabold leading-none text-[#274C5B] md:text-[25px]'>
+                      Organic Foods Only
+                    </h4>
+                    <p className='mx-auto max-w-[70%] font-openSan text-sm text-[#525C60] md:mx-0 md:text-lg'>
+                      Simply dummy text of the printing and typesetting
+                      industry. Lorem Ipsum
+                    </p>
+                  </div>
+                </div>
+                <div className='my-3 flex flex-col items-center gap-3 md:flex-row'>
+                  <span className='inline-block rounded-[1.25rem] bg-white p-3 text-center md:p-5'>
+                    <img src={mailBoxQ} alt='quality assurance' />
+                  </span>
+                  <div>
+                    <h4 className='my-1 font-roboto text-sm font-extrabold leading-none text-[#274C5B] md:text-[1.5625rem]'>
+                      Quality Standards
+                    </h4>
+                    <p className='mx-auto max-w-[70%] font-openSan text-sm text-[#525C60] md:mx-0 md:text-lg'>
+                      Simply dummy text of the printing and typesetting
+                      industry. Lorem Ipsum
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Link to='/' className='border-[.625rem] border-transparent'>
+                <Button className='rounded-2xl bg-[#274C5B] px-5 py-6 text-xs font-bold text-white md:text-xl'>
+                  Shop Now
+                  {/* add an arrow right icon here */}
+                </Button>
+              </Link>
             </div>
-            
           </div>
         </div>
       </div>
