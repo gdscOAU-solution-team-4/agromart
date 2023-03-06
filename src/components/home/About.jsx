@@ -10,7 +10,7 @@ export default function About() {
           <div className=''>
             <img src={fruits} alt='fruits' className='' />
           </div>
-          <div className='text-center pl-20 md:text-start'>
+          <div className='text-center pl-0 md:pl-20 md:text-start'>
             <div>
               <h2 className='font-yellowtail text-xl text-[#7EB693] md:text-2xl'>
                 About Us

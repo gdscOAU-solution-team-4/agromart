@@ -88,7 +88,7 @@ export default function ProductsList() {
   console.log(generalProduct)
   return (
     <>
-      <div className='my-20 grid grid-cols-1 gap-5 md:grid-cols-3'>
+      <div className='my-20 px-5  place-items-center grid sm:grid-cols-2 gap-5 grid-cols-1 md:grid-cols-3'>
         {generalProduct == undefined ? <Loader /> : generalProduct.map(
           ({ category, name, price, dealPrice, ratingStar, imgUrl }, i) => (
             <Fragment key={i}>
