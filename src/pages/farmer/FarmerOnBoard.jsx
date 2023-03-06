@@ -14,7 +14,7 @@ import { get } from '../../utils/storage';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import Toast from '../../components/toast/toast'
-
+import { useNavigate } from "react-router-dom";
 
 export default function FarmerOnBoard() {
   const[farmName, setFarmName] = useState("");
@@ -22,7 +22,7 @@ export default function FarmerOnBoard() {
   let [isOpen, setIsOpen] = useState(false)
   const [showToast, setShowToast] = useState(false);
   const [messages, setMessages] = useState("" || null);
-  
+  const navigate = useNavigate();
 
     
   let userSurname = useUserData()?.surname
@@ -30,12 +30,14 @@ export default function FarmerOnBoard() {
 
   function handleProductClick() {
     setIsOpen(false)
-    window.location.assign('/product-form')
+    navigate('/product-form')
   }
 
   function farmerDashboard() {
+    
     setIsOpen(false)
-    window.location.assign('/farmer-dashboard')
+    navigate('/farmer-dashboard');
+    
   }
 
     const validateForm = () => {

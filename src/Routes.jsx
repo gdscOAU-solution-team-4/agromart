@@ -36,7 +36,6 @@ const router = createBrowserRouter(
         <Route path='/product-form' element={<Test />} />
         <Route path='/about' element={<AboutUs />} />
       </Route>
-
     </Route>
   )
 )

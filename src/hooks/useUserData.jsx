@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { get } from '../utils/storage';
-import { db, doc, getDoc, signOut, auth } from "../firebase/firebase.config"
+import { db, doc, getDoc } from "../firebase/firebase.config"
 
 
 const useUserData = () => {

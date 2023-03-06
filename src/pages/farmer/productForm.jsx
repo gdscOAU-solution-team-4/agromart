@@ -19,6 +19,7 @@ import Toast from '../../components/toast/toast'
 import CustomDisclosure from '../../components/molecule/disclosure'
 import axios from 'axios';
 import { SelectedFileContext } from "../../context/selectedFileContext"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -49,6 +50,7 @@ export default function ProductForm() {
   const [query, setQuery] = useState('')
   const { selectedFile } = useContext(SelectedFileContext);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
 
   const filteredCategory =
@@ -114,7 +116,7 @@ export default function ProductForm() {
 
       setLoading(false);
       setMessages('product uploaded successfully');
-      window.location.assign('/farmer-dashboard')
+      navigate('/farmer-dashboard');
     } catch (error) {
       console.log(error);
       setLoading(false);

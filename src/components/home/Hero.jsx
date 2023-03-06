@@ -3,29 +3,41 @@ import { mainImg } from '../../assets'
 import Button from '../atoms/Button'
 
 export default function Hero() {
-
   return (
-    <div className='w-full h-auto mb-5 flex flex-col md:flex-row items-center pt-14 md:pt-20 bg-[#F1EFF0] '>
-      <div className='w-full lg:w-1/2 flex flex-col px-14 lg:pl-20'>
-        <h5 className='font-yellowtail text-xl text-[#68A47F]'>
-          100% Natural Food
-        </h5>
-        <h2 className='lg:text-6xl lg:w-[90%] md:text-5xl text-center md:text-left py-3 text-3xl lg:leading-[70px] font-roboto text-slate-900 font-bold'>
-          Choose the best
-          healthier way
-          of life
-        </h2>
-        <div className='pt-5 flex justify-center items-center md:justify-start md:items-start'>
-          <Link to='/register'>
-            <button className='bg-[#0E563F] w-40 lg:w-32 py-3 rounded-xl text-white font-semibold'>
-              Get Started
-            </button>
-          </Link>
+    <section className=' min-h-full bg-[#F1EFF0] px-1 md:px-0 lg:px-5'>
+      <div className='h-screen px-7 md:px-4 lg:px-20'>
+        <div className='flex h-full items-center justify-center md:flex-col-reverse md:justify-between lg:flex-row'>
+          <div className='my-8 basis-5/12 text-center lg:text-start'>
+            <div className='flex flex-col-reverse'>
+            <h2 className='lg:text-6xl lg:w-[100%] md:text-5xl text-center md:text-left py-3 text-3xl lg:leading-[70px] font-roboto text-slate-900 font-bold'>
+              Choose the best
+              healthier way
+              of life
+            </h2>
+              <h2 className='font-yellowtail text-xl text-[#68A47F] md:text-2xl'>
+                100% Natural Agricultural product
+              </h2>
+            </div>
+            <Link
+              to='/register'
+              className='inline-block border-[.625rem] border-transparent'
+            >
+              <Button className='rounded-xl bg-primary w-40 lg:w-32 py-3 font-roboto text-sm font-bold text-white md:text-xl'>
+                Get Started
+              </Button>
+            </Link>
+          </div>
+
+          {/* hero image */}
+          <div className='grid h-full basis-1/2 place-items-center md:block'>
+            <img
+              src={mainImg}
+              alt='hero image with plates'
+              className='h-full w-full'
+            />
+          </div>
         </div>
       </div>
-      <div className='lg:w-1/2 h-auto w-full pt-10 md:pt-0 flex justify-end items-end'>
-        <img  src={mainImg} alt='main image' className='w-[90%] h-full object-cover' />
-      </div>
-    </div>
+    </section>
   )
 }

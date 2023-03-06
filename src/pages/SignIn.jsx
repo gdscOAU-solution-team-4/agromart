@@ -17,6 +17,7 @@ export default function SignIn() {
   const [isLoading, setIsLoading] = useState(false)
   const [showToast, setShowToast] = useState(false);
   const [message, setMessage] = useState("" || null)
+  const navigate = useNavigate();
 
     const validateForm = () => {
       let isValid = true
@@ -44,7 +45,7 @@ export default function SignIn() {
                 setMessage("success")
                 const user = userCredential.user;
                 StorageSave(user.uid);
-                window.location.assign('/onboard')
+                navigate('/onboard');
             })
             .catch((err) => {
                
