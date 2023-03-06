@@ -21,6 +21,7 @@ import teamPics1 from './img/teampics.jpg'
 import tomatoes from './img/tomatoes.png'
 import tractor from './img/Tractor.png'
 import updatePassword from './img/update-password.png'
+import backgroundPattern from './img/Background-Patterns.png'
 
 export {
   teamPics1,
@@ -46,5 +47,6 @@ export {
   farmerIcon,
   vegBowl,
   mailBoxQ,
+  backgroundPattern,
   // banner,
 }

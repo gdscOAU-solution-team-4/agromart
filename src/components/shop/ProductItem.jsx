@@ -20,12 +20,12 @@ export default function ProductItem({
     .map((_, i) => <Icon icon='mdi:star' key={i} />)
 
   return (
-    <Card className='flex gap-2 w-11/12 cursor-pointer flex-col justify-between rounded-2xl bg-white drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] transition-transform ease-in hover:translate-y-2'>
+    <Card className='flex gap-2 md:max-w-2xl max-w-md mx-auto cursor-pointer flex-col justify-between rounded-2xl bg-white drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] transition-transform ease-in hover:translate-y-2'>
       <h5 className='max-w-max rounded-lg bg-[#274c5b] p-2 text-center font-openSan text-sm font-semibold text-white md:text-base'>
         {category}
       </h5>
-      <div className='grid  w-full place-items-center'>
-        <img src={imgUrl} alt={name} className="rounded-lg"/>
+      <div className='md:flex-shrink-0 max-w-max '>
+        <img src={imgUrl} alt={name} className="rounded-lg h-72 w-80 object-contain md:w-72"/>
       </div>
       <div>
         <p className='font-roboto text-base font-semibold text-[#274c5b] md:text-xl'>
