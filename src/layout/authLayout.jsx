@@ -25,7 +25,7 @@ const AuthLayout = ({
           <img src={authImg} alt="auth img" className='w-full h-full object-cover '/>
        </div>
 
-      <div className="w-full h-auto lg:w-1/2 flex flex-col">
+      <div className="w-full h-full lg:w-1/2 flex flex-col">
       <div className="pt-24">
       <div className="">
           <h1 className='text-4xl font-heldane text-[#141414] font-semibold text-center '>{heading || 'Hello 👋🏾'}</h1>

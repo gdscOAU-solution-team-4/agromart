@@ -26,15 +26,20 @@ export default function FarmerOnBoard() {
 
     
   let userSurname = useUserData()?.surname
+  let userFarmname = useUserData()?.farmname
   const [updateDocument, isUpdating, message] = useDocumentUpdate();
 
+  console.log(userFarmname)
+  if(userFarmname !== undefined){
+    navigate('/product-form')
+  }
   function handleProductClick() {
     setIsOpen(false)
     navigate('/product-form')
   }
 
   function farmerDashboard() {
-    
+
     setIsOpen(false)
     navigate('/farmer-dashboard');
     

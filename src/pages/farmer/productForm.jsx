@@ -30,7 +30,8 @@ import { useNavigate } from "react-router-dom";
   { id: 4, name: 'Livestock' },
   { id: 5, name: 'Dairy' },
   { id: 6, name: 'Poultry' },
-  { id: 7, name: 'Fishery' }
+  { id: 7, name: 'Fishery' },
+  { id: 8, name: 'Nuts'}
 ]
 
 export default function ProductForm() {
@@ -70,6 +71,7 @@ export default function ProductForm() {
     if ( productName == '' || productPrice == 0 || productDescription == "") {
       isValid = false
         setMessages('invalid credential')
+        setLoading(false);
     }
 
       return isValid
