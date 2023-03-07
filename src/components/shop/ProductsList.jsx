@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import Button from '../atoms/Button'
 import ProductItem from './ProductItem'
+import useGetGeneralProduct from '../../hooks/useGetGeneralProduct'
 
 export const STATIC_PRODUCTS = [
   {
@@ -77,14 +78,20 @@ export const STATIC_PRODUCTS = [
     imgUrl: '/corn.png',
   },
 ]
-
+const Loader = () => {
+  return(
+    <div>loading...</div>
+  )
+}
 export default function ProductsList() {
+  let generalProduct = useGetGeneralProduct()?.products
+  console.log(generalProduct)
   return (
     <>
-      <div className='my-20 grid grid-cols-1 gap-5 md:grid-cols-3'>
-        {STATIC_PRODUCTS.map(
-          ({ category, name, price, dealPrice, ratingStar, imgUrl, id }) => (
-            <Fragment key={id}>
+      <div className='my-20 px-5  place-items-center grid sm:grid-cols-2 gap-5 grid-cols-1 md:grid-cols-3 xl:grid-cols-4'>
+        {generalProduct == undefined ? <Loader /> : generalProduct.map(
+          ({ category, name, price, dealPrice, ratingStar, imgUrl }, i) => (
+            <Fragment key={i}>
               <ProductItem
                 category={category}
                 name={name}
@@ -92,13 +99,12 @@ export default function ProductsList() {
                 deal={dealPrice}
                 rating={ratingStar}
                 imgUrl={imgUrl}
-                id={id}
               />
             </Fragment>
           )
         )}
       </div>
-      <Button className='mx-auto block bg-green-100 pr-32 pl-32 pt-3 pb-3 font-dmSan text-sm font-medium text-white md:text-base'>
+      <Button className='mx-auto block bg-green-100 font-dmSan text-sm font-medium text-white md:text-base'>
         Next Page
       </Button>
     </>

@@ -31,6 +31,7 @@ export default function SignUp() {
   const [isLoading, setIsLoading] = useState(false)
   const [showToast, setShowToast] = useState(false);
   const [message, setMessage] = useState("" || null)
+  const navigate = useNavigate();
 
   const validateForm = () => {
     let isValid = true
@@ -93,7 +94,7 @@ export default function SignUp() {
                 
             })
             .then(() => { 
-              window.location.assign('/onboard')
+              navigate('/onboard');
             })
             .catch((err) => {
                 if (err?.message == "Firebase: Password should be at least 6 characters (auth/weak-password).") {

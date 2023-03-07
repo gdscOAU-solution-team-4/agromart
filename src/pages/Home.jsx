@@ -6,6 +6,8 @@ import Hero from '../components/home/Hero'
 import Offer from '../components/home/Offer'
 import OfferWProducts from '../components/home/OfferWProducts'
 import Products from '../components/home/Products'
+import ProductItem from '../components/shop/ProductItem'
+import ProductsList from '../components/shop/ProductsList'
 import DefaultLayout from '../layout/defaultLayout'
 
 export default function Home() {
@@ -15,7 +17,7 @@ export default function Home() {
         <Hero />
         <Offer />
         <About />
-        <Products />
+        <ProductsList />
         <OfferWProducts />
         <Cta />
       </main>

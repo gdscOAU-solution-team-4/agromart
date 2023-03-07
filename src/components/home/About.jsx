@@ -10,12 +10,12 @@ export default function About() {
           <div className=''>
             <img src={fruits} alt='fruits' className='' />
           </div>
-          <div className='text-center md:text-start'>
+          <div className='text-center pl-0 md:pl-20 md:text-start'>
             <div>
-              <h2 className='font-yellowtail text-xl text-[#7EB693] md:text-4xl'>
+              <h2 className='font-yellowtail text-xl text-[#7EB693] md:text-2xl'>
                 About Us
               </h2>
-              <h3 className='my-3 font-roboto text-2xl font-extrabold leading-none text-[#274C5B] md:text-[3.125rem]'>
+              <h3 className='my-3 font-roboto text-2xl font-extrabold leading-[58px] text-[#274C5B] md:text-[3.125rem]'>
                 We Believe in Working <br /> Accredited Farmers
               </h3>
               <p className='mx-auto max-w-[70%] font-openSan text-sm text-[#525C60] md:mx-0 md:text-lg'>
@@ -54,7 +54,7 @@ export default function About() {
                 </div>
               </div>
               <Link to='/' className='border-[.625rem] border-transparent'>
-                <Button className='rounded-2xl bg-[#274C5B] px-5 py-6 text-xs font-bold text-white md:text-xl'>
+                <Button className='rounded-xl bg-[#274C5B] text-xs font-bold text-white md:text-xl'>
                   Shop Now
                   {/* add an arrow right icon here */}
                 </Button>

@@ -19,6 +19,7 @@ import Toast from '../../components/toast/toast'
 import CustomDisclosure from '../../components/molecule/disclosure'
 import axios from 'axios';
 import { SelectedFileContext } from "../../context/selectedFileContext"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -29,7 +30,8 @@ import { SelectedFileContext } from "../../context/selectedFileContext"
   { id: 4, name: 'Livestock' },
   { id: 5, name: 'Dairy' },
   { id: 6, name: 'Poultry' },
-  { id: 7, name: 'Fishery' }
+  { id: 7, name: 'Fishery' },
+  { id: 8, name: 'Nuts'}
 ]
 
 export default function ProductForm() {
@@ -49,6 +51,7 @@ export default function ProductForm() {
   const [query, setQuery] = useState('')
   const { selectedFile } = useContext(SelectedFileContext);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
 
   const filteredCategory =
@@ -68,6 +71,7 @@ export default function ProductForm() {
     if ( productName == '' || productPrice == 0 || productDescription == "") {
       isValid = false
         setMessages('invalid credential')
+        setLoading(false);
     }
 
       return isValid
@@ -114,7 +118,7 @@ export default function ProductForm() {
 
       setLoading(false);
       setMessages('product uploaded successfully');
-      window.location.assign('/farmer-dashboard')
+      navigate('/farmer-dashboard');
     } catch (error) {
       console.log(error);
       setLoading(false);

@@ -12,3 +12,7 @@
   font-family: dmSan;
   src: url(/src/assets/font/DMSans-Regular.ttf);
 }
+
+body{
+  background-color: #F9F8F8;
+}

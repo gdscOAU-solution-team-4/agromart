@@ -1,37 +1,49 @@
 import { Link } from 'react-router-dom'
-import { mainImg } from '../../assets'
+import { mainImg, backgroundPattern } from '../../assets'
 import Button from '../atoms/Button'
 
 export default function Hero() {
   return (
-    <section className=' min-h-[50rem] bg-[#F1EFF0] px-1 md:px-0 lg:px-5'>
-      <div className='h-[50rem] px-7 md:px-4 lg:px-20'>
-        <div className='flex h-full items-center justify-center md:flex-col-reverse md:justify-between lg:flex-row'>
-          <div className='my-8 basis-5/12 text-center lg:text-start'>
-            <div className='flex flex-col-reverse'>
-              <h1 className='my-4 font-roboto text-5xl font-extrabold leading-none text-[#153A49] md:text-[3.125rem]'>
-                Healthy Harvests <br /> for a Healthy Lifestyle
-              </h1>
-              <h2 className='font-yellowtail text-2xl text-[#68A47F] md:text-4xl'>
+    <section className='max-h-auto md:max-h-screen bg-[#F1EFF0] px-1 md:px-0 lg:px-5'>
+      
+      <div className='h-full px-2 lg:px-4 xl:px-20'>
+        
+        <div className='flex h-full items-center justify-between flex-col md:flex-row'>
+          <div className='absolute top-20 left-0'>
+          <img src={backgroundPattern} alt="" />
+        </div>
+          <div className=' w-full md:mr-10 lg:px-0 my-8 z-[1] basis-5/12 text-center flex flex-col justify-center lg:justify-start lg:items-start lg:text-start'>
+            <div className='flex flex-col '>
+
+              <h3 className=' pt-8 font-yellowtail text-lg text-[#68A47F] md:text-2xl'>
                 100% Natural Agricultural product
-              </h2>
+              </h3>
+              <h1 className='xl:text-6xl md:text-4xl lg:text-5xl  lg:w-[100%] text-center md:text-left py-1 text-3xl md:leading-[2rem] xl:leading-[4rem] lg:leading-[3.5rem] font-roboto text-slate-900 font-bold'>
+                Choose the best
+                healthier way
+                of life
+              </h1>
+              
             </div>
-            <Link
+            <div className='flex flex-col md:justify-start md:items-start'>
+              <Link
               to='/register'
-              className='inline-block border-[.625rem] border-transparent'
+              className='border-[.625rem] border-transparent lg:border-none'
             >
-              <Button className='rounded-2xl bg-primary py-6 px-5 font-roboto text-sm font-bold text-white md:text-xl'>
+              <Button className='rounded-xl bg-primary w-40 lg:w-32 py-3 font-roboto text-sm font-bold text-white md:text-xl'>
                 Get Started
               </Button>
             </Link>
+            </div>
+            
           </div>
 
           {/* hero image */}
-          <div className='grid hidden h-full basis-1/2 place-items-center md:block'>
+          <div className='grid sm:w-[60%] w-full h-auto md:h-[85vh] place-items-center md:block'>
             <img
               src={mainImg}
               alt='hero image with plates'
-              className='h-full w-full'
+              className='h-full w-full object-cover'
             />
           </div>
         </div>
