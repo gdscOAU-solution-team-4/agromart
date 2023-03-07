@@ -15,20 +15,20 @@ export default function Hero() {
           <div className=' w-full md:mr-10 lg:px-0 my-8 z-[1] basis-5/12 text-center flex flex-col justify-center lg:justify-start lg:items-start lg:text-start'>
             <div className='flex flex-col '>
 
-              <h2 className=' pt-8 font-yellowtail text-lg text-[#68A47F] md:text-2xl'>
+              <h3 className=' pt-8 font-yellowtail text-lg text-[#68A47F] md:text-2xl'>
                 100% Natural Agricultural product
-              </h2>
-              <h2 className='xl:text-6xl md:text-4xl lg:text-5xl  lg:w-[100%] text-center md:text-left py-1 text-3xl md:leading-[50px] xl:leading-[70px] lg:leading-[60px] font-roboto text-slate-900 font-bold'>
+              </h3>
+              <h1 className='xl:text-6xl md:text-4xl lg:text-5xl  lg:w-[100%] text-center md:text-left py-1 text-3xl md:leading-[2rem] xl:leading-[4rem] lg:leading-[3.5rem] font-roboto text-slate-900 font-bold'>
                 Choose the best
                 healthier way
                 of life
-              </h2>
+              </h1>
               
             </div>
             <div className='flex flex-col md:justify-start md:items-start'>
               <Link
               to='/register'
-              className=''
+              className='border-[.625rem] border-transparent lg:border-none'
             >
               <Button className='rounded-xl bg-primary w-40 lg:w-32 py-3 font-roboto text-sm font-bold text-white md:text-xl'>
                 Get Started
